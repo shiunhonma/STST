@@ -14,6 +14,6 @@ class User < ApplicationRecord
 
     belongs_to :room, optional: true
     belongs_to :user_room, optional: true
-    belongs_to :caht, optional:true
+    belongs_to :chat, optional:true
 
 end
