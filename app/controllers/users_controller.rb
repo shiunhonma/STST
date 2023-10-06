@@ -22,7 +22,7 @@ class UsersController < ApplicationController
         redirect_to signup_path
     end
 
-    pravete
+    private
         def user_params
             params.require(:user).permit(:email, :password, :password_confirmation, :name)
         end
