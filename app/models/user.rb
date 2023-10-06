@@ -12,4 +12,8 @@ class User < ApplicationRecord
 
     validates :name, presence: true
 
+    belongs_to :room, optional: true
+    belongs_to :user_room, optional: true
+    belongs_to :caht, optional:true
+
 end
