@@ -1,4 +1,4 @@
-class Caht < ApplicationRecord
+class Chat < ApplicationRecord
 
     has_many :users
 end
