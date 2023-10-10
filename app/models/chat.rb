@@ -1,4 +1,4 @@
 class Caht < ApplicationRecord
 
-    has_many :Users
+    has_many :users
 end
