@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :cahts
+  resources :chats
   resources :user_rooms
   resources :rooms
   resources :room_categories

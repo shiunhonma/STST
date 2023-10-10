@@ -1,70 +1,70 @@
-class CahtsController < ApplicationController
-  before_action :set_caht, only: %i[ show edit update destroy ]
+class ChatsController < ApplicationController
+  before_action :set_chat, only: %i[ show edit update destroy ]
 
-  # GET /cahts or /cahts.json
+  # GET /chats or /chats.json
   def index
-    @cahts = Caht.all
+    @chats = Chat.all
   end
 
-  # GET /cahts/1 or /cahts/1.json
+  # GET /chats/1 or /chats/1.json
   def show
   end
 
-  # GET /cahts/new
+  # GET /chats/new
   def new
-    @caht = Caht.new
+    @chat = Chat.new
   end
 
-  # GET /cahts/1/edit
+  # GET /chats/1/edit
   def edit
   end
 
-  # POST /cahts or /cahts.json
+  # POST /chats or /chats.json
   def create
-    @caht = Caht.new(caht_params)
+    @chat = Chat.new(chat_params)
 
     respond_to do |format|
-      if @caht.save
-        format.html { redirect_to caht_url(@caht), notice: "Caht was successfully created." }
-        format.json { render :show, status: :created, location: @caht }
+      if @chat.save
+        format.html { redirect_to chat_url(@chat), notice: "Chat was successfully created." }
+        format.json { render :show, status: :created, location: @chat }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @caht.errors, status: :unprocessable_entity }
+        format.json { render json: @chat.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /cahts/1 or /cahts/1.json
+  # PATCH/PUT /chats/1 or /chats/1.json
   def update
     respond_to do |format|
-      if @caht.update(caht_params)
-        format.html { redirect_to caht_url(@caht), notice: "Caht was successfully updated." }
-        format.json { render :show, status: :ok, location: @caht }
+      if @chat.update(chat_params)
+        format.html { redirect_to chat_url(@chat), notice: "Chat was successfully updated." }
+        format.json { render :show, status: :ok, location: @chat }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @caht.errors, status: :unprocessable_entity }
+        format.json { render json: @chat.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /cahts/1 or /cahts/1.json
+  # DELETE /chats/1 or /chats/1.json
   def destroy
-    @caht.destroy
+    @chat.destroy
 
     respond_to do |format|
-      format.html { redirect_to cahts_url, notice: "Caht was successfully destroyed." }
+      format.html { redirect_to chats_url, notice: "Chat was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_caht
-      @caht = Caht.find(params[:id])
+    def set_chat
+      @chat = Chat.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
-    def caht_params
-      params.require(:caht).permit(:message, :attachment, :user_id)
+    def chat_params
+      params.require(:chat).permit(:message, :attachment, :user_id)
     end
 end
