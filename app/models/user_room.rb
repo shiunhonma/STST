@@ -1,5 +1,5 @@
 class UserRoom < ApplicationRecord
 
-    has_many :Users
+    has_many :users
     has_many :rooms
 end

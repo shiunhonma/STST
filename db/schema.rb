@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2023_10_06_045341) do
 
-  create_table "cahts", force: :cascade do |t|
+  create_table "chats", force: :cascade do |t|
     t.text "message"
     t.binary "attachment"
     t.integer "user_id"
