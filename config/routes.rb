@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'profile'
   delete '/users/:id', to: 'users#destroy', as: 'unsubscribe'
+
+  get '/login', to: 'sessions#new'
+  post '/users/:id', to: 'sessions#create'
+  get '/sessions/:id' to: 'sessions#show', as: 'profile'
+  delete '/logout', to: 'sessions#destroy'
 end
