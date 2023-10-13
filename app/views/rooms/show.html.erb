@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Room name:</strong>
+  <strong>部屋名:</strong>
   <%= @room.room_name %>
 </p>
 
 <p>
-  <strong>Room category:</strong>
+  <strong>カテゴリID:</strong>
   <%= @room.room_category %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>ユーザID:</strong>
   <%= @room.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<%= link_to '編集', edit_room_path(@room) %> |
+<%= link_to '戻れ', rooms_path %>

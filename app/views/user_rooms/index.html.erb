@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>User Rooms</h1>
+<h1>マイページ</h1>
 
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Room</th>
+      <th>ユーザID</th>
+      <th>部屋ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= user_room.user_id %></td>
         <td><%= user_room.room_id %></td>
-        <td><%= link_to 'Show', user_room %></td>
-        <td><%= link_to 'Edit', edit_user_room_path(user_room) %></td>
-        <td><%= link_to 'Destroy', user_room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '公開', user_room %></td>
+        <td><%= link_to '編集', edit_user_room_path(user_room) %></td>
+        <td><%= link_to '削除', user_room, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>

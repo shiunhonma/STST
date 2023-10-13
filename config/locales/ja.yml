@@ -9,12 +9,26 @@ ja:
         email: メールアドレス
         password: パスワード
         user_name: 氏名
+        icon: アイコン
+        point: ポイント
         created_at: 作成日
         updated_at: 更新日
 
       chat:
-        user: 利用者
-        room: 部屋
+        user_id: ユーザID
         messeage: メッセージ
+        attachment: 添付ファイル
         created_at: 作成日
         update_at: 更新日
+      
+      room_categories:
+        category_name: カテゴリ名
+
+      room:
+        room_name: 部屋名
+        room_category_id: カテゴリID
+        user_id: ユーザID
+
+      user_room:
+        user_id: ユーザID
+        room_id: 部屋ID
