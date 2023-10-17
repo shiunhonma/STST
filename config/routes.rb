@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'mypage/top'
   resources :chats
   resources :user_rooms
   resources :rooms
