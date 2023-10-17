@@ -2,10 +2,23 @@
 
 <%= form_with model: @session, local: true do |form| %>
     <%= flash[:danger] %>
-    <%= form.label :email, 'メールアドレス' %>
-    <%= form.email_field :email %>
-    <%= form.label :password, 'パスワード' %>
-    <%= form.password_field :password %>
 
-    <%= form.submit 'ログイン' %>
+    <div>
+        <%= form.label :email, 'メールアドレス' %>
+        <br>
+        <%= form.email_field :email, {class: "form-control"} %>
+    </div>
+
+    <div>
+        <%= form.label :password, 'パスワード' %>
+        <br>
+        <%= form.password_field :password, {class: "form-control"} %>
+    </div>
+
+    <div class="b-grid gap-2">
+        <%= form.submit 'ログイン', {class: "btn btn-primary"} %>
+    </div>
+
 <% end %>
+
+<%= link_to "新規登録", signup_path %>
