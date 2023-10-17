@@ -1,4 +1,6 @@
-Rails.application.routes.draw do  
+
+Rails.application.routes.draw do
+  get 'mypage/top'
   get 'home/index'
   root to: 'home#index'
   resources :chats
