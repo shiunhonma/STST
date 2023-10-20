@@ -12,8 +12,7 @@ class User < ApplicationRecord
 
     validates :name, presence: true
 
-    belongs_to :room, optional: true
-    belongs_to :user_room, optional: true
-    belongs_to :chat, optional:true
+    has_many :user_rooms
+    has_many :chats
 
 end

@@ -1,6 +1,6 @@
 
 Rails.application.routes.draw do
-  get 'mypage/top'
+  get 'home/top'
   get 'home/index'
   root to: 'home#index'
   resources :chats
