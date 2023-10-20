@@ -20,8 +20,60 @@
     font-size:50px;
 }
 .icon{
-    margin: 100px;
+    
+    padding: 140px 0px;
     background-color: crimson;
-    border: 1px solid;
+    
     border-radius: 50%;
+}
+
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 0.8rem 3.8rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+  
+  
+}
+
+.btn--chat,
+a.btn--chat {
+  color: #fff;
+  background-color: #49d309;
+}
+
+.btn--chat:hover,
+a.btn--chat:hover {
+  color: #fff;
+  background: #45f500;
+}
+
+.btn--ranking,
+a.btn--ranking {
+  color: #fff;
+  background-color: #ffe607;
+}
+
+.btn--ranking:hover,
+a.btn--ranking:hover {
+  color: #fff;
+  background: #fbff06;
 }
