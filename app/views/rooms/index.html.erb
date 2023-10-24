@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!--p id="notice"><%= notice %></p>
 
 <h1>部屋</h1>
 
@@ -28,4 +28,34 @@
 
 <br>
 
-<%= link_to '新しく部屋を作る', new_room_path %>
+<%= link_to '新しく部屋を作る', new_room_path %-->
+
+<div>
+  <% @anotherUserRooms.each do |userroom| %>
+    <table class="table table-striped">
+      <tr>
+        <td>
+          <%= link_to room_path(userroom.roomid) do %>
+            <%= userroom.user.name %>
+          <% end %>
+        </td>
+        <td>
+          <% chat = Chat.find_by(id: userroom.room.chat_ids.last) %>
+          <% if chat.nil? %>
+            <span>投稿なし</span>
+          <% else %>
+            <%= truncate(chat.message, lingth: 10) %>
+          <% end %>
+        </td>
+        <td>
+          <h6 style="color: #C0C0C0;"><%= userroom.updated_at.strftime("%Y/%m/%d %H:%M") %>
+        </td>
+        <td>
+          <%= link_to room_path(userroom.room.id), methodd: :delete do %>
+            削除
+          <% end %>
+        </td>
+      </tr>
+    </table>
+  <% end %>
+</div>

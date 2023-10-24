@@ -1,0 +1,39 @@
+<!-- チャット相手を選ぶための一覧を表示する -->
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= user.name %></td>
+                <td>
+                <% unless user.id == current_user.id %>
+                    <% userroom = open_userroom_record(user) %>
+                    <% if userroom.nil? %>
+
+                        <!-- 相手とのチャットルームがないでの作成する -->
+                            <%= form_for Room.new, url: rooms_path do |r| %>
+                                <%= fields_for UserRoom.new do |url| %>
+                                    <%= url.hidden_field :user_id, :value=> user.id %>
+                                <% end %>
+                                <%= button_tag "チャットを始める", type: "submit", id: "chat_submit" %>
+                            <% end %>
+
+                    <% else %>
+
+                        <!-- 相手とのチャットルームがある -->
+                            <%= link_to room_path(userroom.room_id) do %>
+                                <%= button_tag "チャットを続ける", id: "chat_submit" %>
+                            <% end %>
+                    <% end %>
+                <% end %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
