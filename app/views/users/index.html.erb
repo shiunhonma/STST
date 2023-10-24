@@ -19,7 +19,7 @@
                         <!-- 相手とのチャットルームがないでの作成する -->
                             <%= form_for Room.new, url: rooms_path do |r| %>
                                 <%= fields_for UserRoom.new do |url| %>
-                                    <%= ur.hidden_field :user_id, :value=> user.id %>
+                                    <%= url.hidden_field :user_id, :value=> user.id %>
                                 <% end %>
                                 <%= button_tag "チャットを始める", type: "submit", id: "chat_submit" %>
                             <% end %>

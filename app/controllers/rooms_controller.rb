@@ -59,7 +59,7 @@ class RoomsController < ApplicationController
 
       # UserRoomにチャット相手を作成する
       @userroom2 = UserRoom.new(:room_id => @room.id, :user_id => params[:user_room][:user_id])
-      @userroom2 = save
+      @userroom2.save
     end
 
     # チャット画面に遷移する

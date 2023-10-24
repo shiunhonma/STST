@@ -3,6 +3,7 @@ module SessionsHelper
     #セッション委利用者IDを保存する
     def log_in(user)
         session[:user_id] = user.id
+        cookies.signed[:user_id] = user.id
     end
 
     #利用者IDをキーにして利用者情報を取得する
