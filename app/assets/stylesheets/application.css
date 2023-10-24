@@ -27,7 +27,19 @@
     border-radius: 50%;
 }
 
+.point_box{
+  padding: 100px ;
+  height: 100%;
+}
 
+.point{
+  color: orange;
+  font-size: 120px;
+  padding-bottom: 50px;
+}
+.have_point{
+  padding-bottom: 90px;
+}
 .btn,
 a.btn,
 button.btn {
