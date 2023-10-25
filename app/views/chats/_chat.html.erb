@@ -1,18 +1,18 @@
 <p class="<%= chat.id %>" style= "margino-top: 0;">
-  <%= chat.user.name %>
+  <%= chat.user_id %>
 </p>
 <p class="<%= chat.id %>">
   <span class="balloon">
     <h7 class="chat_message"><%= chat.message %></h7><br>
-    <h7 style="color: #C0C0C0;"><%= chat.created_at.strftime("%Y/%m/%d %H:%M") %></h7>
+    <h7 style="color: #C0C0C0;"><%# chat.created_at.strftime("%Y/%m/%d %H:%M") %></h7>
   </span>
 </p>
 <br>
 
+
 <!-- メッセージの表示位置を指定する-->
 <script>
     //メッセージのユーザーidを取ってくる
-        var chat = <%= chat.user.id %>;
     //id="current_user"の内容を取得
         var chat_user = document.getElementById('current_user');
     //chat_userのdate-user_idを取得する
