@@ -19,6 +19,15 @@
     background-color: #ee827c;
     font-size:50px;
 }
+.chat_side{
+  max-height: 500px;
+  height: 100%;
+}
+
+.point_side{
+  max-height: 500px;
+}
+
 .icon{
     
     padding: 140px 0px;
@@ -28,17 +37,21 @@
 }
 
 .point_box{
-  padding: 100px ;
-  height: 100%;
+  padding: 20% ;
+  height: 80%;
+  
 }
 
+.aaaaa{
+  font-size: 1.4rem;
+}
 .point{
   color: orange;
   font-size: 120px;
-  padding-bottom: 50px;
+  padding-bottom: 20%;
 }
 .have_point{
-  padding-bottom: 90px;
+  padding-bottom: 10%;
 }
 .btn,
 a.btn,

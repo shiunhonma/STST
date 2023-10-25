@@ -1,4 +1,4 @@
 class MypageController < ApplicationController
-  def top
+  def mypage
   end
 end
