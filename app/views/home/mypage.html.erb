@@ -9,13 +9,13 @@
                     <div class="col-md-12 border text-center">
                         <div class="icon_box">
                             <img src="/images/image3-10.jpg" class="rounded-circle" alt="参考画像" width="80%" height="80%">
-                            <h1 class="name">名前</h1>
+                            <h1 class="name"><%= current_user.name %></h1>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 border text-center">
-                        <%= link_to 'チャット', chats_path , {class: "btn btn--chat"}%>
+                        <%= link_to 'チャット', users_path , {class: "btn btn--chat"}%>
                     </div>
                 </div>
             </div>
