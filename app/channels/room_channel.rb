@@ -10,10 +10,10 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def room_select(data)
-    stream_from "some_channel"
+    stream_from "some_channel_#{data['room']}"
   end
 
   def speak(data)
-    Chat.create! message: data['message'], user_id: data['user'] room_id: data['room']
+    Chat.create! message: data['message'], user_id: data['user'], room_id: data['room']
   end
 end

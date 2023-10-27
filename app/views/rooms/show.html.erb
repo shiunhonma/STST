@@ -18,6 +18,9 @@
   <input type="text" id="chat_input" data-behavior="room_speaker" class="form-control">
 </form>
 
+<%= link_to '編集', edit_room_path(@room) %> |
+<%= link_to '戻る', rooms_path %>
+
 <script>
   var element = document.getElementById('chat_input'); //移動させたい一の要素を取得
   element.scrollIntoView();
@@ -38,7 +41,4 @@
 <p>
   <strong>ユーザID:</strong>
   <%= @room.user_id %>
-</p>
-
-<%= link_to '編集', edit_room_path(@room) %> |
-<%= link_to '戻る', rooms_path %-->
+</p-->
