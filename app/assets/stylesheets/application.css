@@ -102,8 +102,3 @@ a.btn--ranking:hover {
   color: #fff;
   background: #fbff06;
 }
-
-
-
-@import "scaffolds";
-@import "chats";
