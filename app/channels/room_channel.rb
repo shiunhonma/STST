@@ -14,6 +14,8 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    Chat.create! message: data['message'], user_id: data['user'], room_id: data['room']
+    unless data['message'] == ""
+        Chat.create! message: data['message'], user_id: data['user'], room_id: data['room']
+    end
   end
 end
