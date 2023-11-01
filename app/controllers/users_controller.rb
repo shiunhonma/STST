@@ -12,6 +12,12 @@ class UsersController < ApplicationController
     
     def create
         @user = User.new(user_params)
+        @user.point = 0
+
+        image_path = Rails.root.join("public/images/", "STST_initial.jpg")
+        File.open(image_path,"r+b") do |f|
+            @user.icon = f.read
+        end
         if @user.save
             log_in(@user)
             redirect_to profile_path
@@ -27,6 +33,11 @@ class UsersController < ApplicationController
     def destroy
         current_user.destroy
         redirect_to signup_path
+    end
+
+    def get_image
+        user = User.find(params[:id])
+        send_data(user.icon, disposition: :inline)
     end
 
     private

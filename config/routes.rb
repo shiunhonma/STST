@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :user_rooms
   resources :rooms
   resources :room_categories
+  resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -21,4 +22,5 @@ Rails.application.routes.draw do
   get '/users/new', to: 'users#new'
   get '/users', to: 'users#index'
 
+  get '/image_of_usericon/:id' , to: 'users#get_image', as:'image_of_usericon'
 end
