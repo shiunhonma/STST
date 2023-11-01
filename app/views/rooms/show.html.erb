@@ -2,6 +2,7 @@
   <% current_user == e.user ? @class = "current_user" : @class = "" %>
   <% if e.user != current_user %>
     <h5 class="text-left <%= @class %>" id="<%= @class %>" style="font-size: 30px;" data-user_id="<%= e.user.id %>">
+      <%= link_to 'ホーム', home_index_path %>
       <%= "@#{e.user.name}" %>
     </h5>
   <% else %>
