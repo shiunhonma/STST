@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
     validates :name, presence: true
 
-    has_many :user_rooms
+    has_many :user_rooms, dependent: :destroy
     has_many :chats
+    has_many :room_entries
 end

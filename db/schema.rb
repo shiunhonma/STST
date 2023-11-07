@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_27_060512) do
+ActiveRecord::Schema.define(version: 2023_11_01_032630) do
 
   create_table "chats", force: :cascade do |t|
     t.text "message"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2023_10_27_060512) do
 
   create_table "room_categories", force: :cascade do |t|
     t.string "category_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "room_entries", force: :cascade do |t|
+    t.text "comment"
+    t.boolean "flag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

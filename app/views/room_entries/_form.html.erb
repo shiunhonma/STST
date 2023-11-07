@@ -1,0 +1,27 @@
+<%= form_with(model: room_entry) do |form| %>
+  <% if room_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room_entry.errors.count, "error") %> prohibited this room_entry from being saved:</h2>
+
+      <ul>
+        <% room_entry.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flag %>
+    <%= form.check_box :flag %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
