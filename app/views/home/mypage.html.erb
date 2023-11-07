@@ -2,8 +2,9 @@
 
 
 <div class = Mypage><!-- とりあえず-->
-        <h1>マイページ</h1>
-      </div>
+    <h1 class ="Mypage_text">マイページ</h1>
+    <%= link_to image_tag('/images/ギア1.jpg' , class:"gear" ,:width => '60', :height => '60' ), profile_path  %>
+</div>
         <div class="row ">
             
             <div class="col-md-6 border">
@@ -12,7 +13,7 @@
                         <div class="icon_box">
 
                             <%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '350', :height => '350' )%>
-                            <h1 class="name"><%= current_user.name %></h1>
+                            <h1 class="name"><%= current_user.name %>(<%= current_user.id%>)</h1>
                         </div>
                     </div>
                 </div>
@@ -33,21 +34,21 @@
                             <div class="have_point">
                                 <h2>所有ポイント</h2>
                             </div>
-                            <h3>〇〇人に教えました！！</h3>
-                            <h3>〇〇人に教わりました！！</h3>
+                            <h3><%= current_user.taught_member %>人に教えました！！</h3>
+                            <h3><%= current_user.student_member %>人に教わりました！！</h3>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 border text-center">
-                    <%= link_to 'ランキング', chats_path , {class: "btn btn--ranking"}%>
-                    
+                        <%= link_to 'ランキング', chats_path , {class: "btn btn--ranking"}%>
                     </div>
                 </div>
             </div>
             
         </div>
-          <%= link_to 'ホーム', home_index_path %>
-
+        <div class="root_home">
+            <%= link_to image_tag('/images/home.jpg' , class:"home" ,:width => '100', :height => '100' ), home_index_path  %>
+        </div>
     </div>
         <footer>フッターです</footer> 

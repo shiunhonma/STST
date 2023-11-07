@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   get '/users/new', to: 'users#new'
   get '/users', to: 'users#index'
 
+  get '/home/mypage/setting' , to: 'users#show'
   get '/image_of_usericon/:id' , to: 'users#get_image', as:'image_of_usericon'
 end

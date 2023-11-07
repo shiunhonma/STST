@@ -18,6 +18,16 @@
     padding: 10px;
     background-color: #ee827c;
     font-size:50px;
+    display: flex;
+    border: solid 1px black;
+    justify-content: space-between;
+}
+.Mypage_text{
+  
+}
+.gear{
+  margin:0 0 0 0;
+  
 }
 .chat_side{
   max-height: 500px;
@@ -60,6 +70,16 @@
 }
 .have_point{
   padding-bottom: 10%;
+}
+
+.home{
+  
+}
+.home:hover{
+  filter: contrast(200%);
+}
+.root_home{
+  text-align: right;
 }
 .btn,
 a.btn,
@@ -110,3 +130,16 @@ a.btn--ranking:hover {
   color: #fff;
   background: #fbff06;
 }
+
+
+.setting_head{
+  margin: 0px -12px;
+  padding: 10px;
+  background-color: gray;
+  font-size:50px;
+  display: flex;
+  border: solid 1px black;
+  justify-content: space-between;
+}
+
+
