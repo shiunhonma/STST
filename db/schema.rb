@@ -10,11 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2023_11_01_021719) do
-=======
-ActiveRecord::Schema.define(version: 2023_11_01_032630) do
->>>>>>> 9584f9775d4e8ba045307a82b02a07995e4a4410
+
+ActiveRecord::Schema.define(version: 2023_11_07_015319) do
 
   create_table "chats", force: :cascade do |t|
     t.text "message"
@@ -44,6 +41,7 @@ ActiveRecord::Schema.define(version: 2023_11_01_032630) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "comment"
   end
 
   create_table "user_rooms", force: :cascade do |t|

@@ -1,2 +1,0 @@
-module RoomSelectsHelper
-end

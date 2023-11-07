@@ -8,6 +8,7 @@ class RoomCategoriesController < ApplicationController
 
   # GET /room_categories/1 or /room_categories/1.json
   def show
+    @room = Room.all
   end
 
   # GET /room_categories/new
