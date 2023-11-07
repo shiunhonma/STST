@@ -17,13 +17,18 @@
   </div>
 
   <div class="field">
-    <%= form.label "カテゴリID" %>
-    <%= form.number_field :room_category %>
+    <%= form.label "カテゴリ名" %>
+    <%= form.text_field :room_category %>
   </div>
 
   <div class="field">
     <%= form.label "ユーザID" %>
     <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label "備考" %>
+    <%= form.text_field :comment %>
   </div>
 
   <div class="actions">
