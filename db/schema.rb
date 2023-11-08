@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 2023_11_07_015319) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "point"
     t.binary "icon"
+    t.integer "taught_member"
+    t.integer "student_member"
   end
 
 end

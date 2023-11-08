@@ -17,13 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label "カテゴリID" %>
-    <%= form.number_field :room_category_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label "ユーザID" %>
-    <%= form.number_field :user_id %>
+    <%= form.label "カテゴリ" %>
+    <%= form.select :room_category_id, RoomCategory.all.map { |room_category| [room_category.category_name, room_category.id]} %>
   </div>
 
   <div class="field">
