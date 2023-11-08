@@ -13,7 +13,8 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         @user.point = 0
-
+        @user.taught_member = 0
+        @user.student_member = 0
         image_path = Rails.root.join("public/images/", "STST_initial.jpg")
         File.open(image_path,"r+b") do |f|
             @user.icon = f.read
