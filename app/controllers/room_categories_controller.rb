@@ -8,7 +8,8 @@ class RoomCategoriesController < ApplicationController
 
   # GET /room_categories/1 or /room_categories/1.json
   def show
-    @room = Room.all
+    @room_category = RoomCategory.find(params[:id])
+    @rooms = @room_category.rooms
   end
 
   # GET /room_categories/new
