@@ -18,4 +18,5 @@ class User < ApplicationRecord
     has_many :user_rooms, dependent: :destroy
     has_many :chats
     has_many :room_entries
+    has_many :rooms
 end
