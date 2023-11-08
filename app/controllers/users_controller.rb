@@ -36,6 +36,22 @@ class UsersController < ApplicationController
         redirect_to signup_path
     end
 
+    def edit
+
+    end
+    
+    def update
+        @user = User.find(params[:id])
+    respond_to do |format|
+      if @user.update(user_params_update)
+        format.html { redirect_to home_mypage_path, notice: "User room was successfully updated." }
+      else
+        format.html { render :show, status: :unprocessable_entity }
+      end
+    end
+    end
+
+
     def get_image
         user = User.find(params[:id])
         send_data(user.icon, disposition: :inline)
@@ -44,5 +60,8 @@ class UsersController < ApplicationController
     private
         def user_params
             params.require(:user).permit(:email, :password, :password_confirmation, :name)
+        end
+        def user_params_update
+            params.require(:user).permit(:name)
         end
 end

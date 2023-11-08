@@ -29,6 +29,10 @@
   margin:0 0 0 0;
   
 }
+.gear:hover{
+  filter: contrast(200%);
+}
+
 .chat_side{
   max-height: 500px;
   height: 100%;
@@ -131,7 +135,7 @@ a.btn--ranking:hover {
   background: #fbff06;
 }
 
-
+/* ここから設定（プロファイル）*/
 .setting_head{
   margin: 0px -12px;
   padding: 10px;

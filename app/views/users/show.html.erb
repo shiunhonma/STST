@@ -1,7 +1,58 @@
+
+
 <div class = setting_head><!-- とりあえず-->
     <h1 class ="Mypage_text">  設定</h1>
-    <%= link_to image_tag('/images/ギア1.jpg' , class:"gear" ,:width => '60', :height => '60' ), profile_path  %>
+    <%= link_to image_tag('/images/戻る.jpg' , class:"gear" ,:width => '80', :height => '70' ), home_mypage_path  %>
 </div>
+
+
+<%= form_with(model: @user) do |form| %>
+  <% if @user.errors.any? %>
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<div class="row">
+    <div class="col-md-4 border text-center">
+        <h1>名前の設定</h1>
+    </div>
+    <div class="col-md-8 border text-center">
+        <h2>現在の名前:<%= current_user.name %></h2>
+    </div>
+</div>
+<div class="row">
+    
+    <div class="col-md-12 border text-center">
+        <%= form.label "名前を入力" %>
+        <%= form.text_field :name , :size=>"40" %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 border text-center">
+        <h1>アイコンの設定</h1>
+    </div>
+    <div class="col-md-8 border text-center">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 border text-center">
+        <%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '200', :height => '200' )%>
+    <p>現在のアイコン</p>
+    </div>
+    <div class="col-md-8 border text-center">
+    </div>
+</div>
+<% end %>
+
+
 <h1>利用者情報</h1>
 
 <p>メールアドレス:<%=current_user.email %></p>

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
 
   get '/home/mypage/setting' , to: 'users#show'
+  
   get '/image_of_usericon/:id' , to: 'users#get_image', as:'image_of_usericon'
 
 
