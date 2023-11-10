@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2023_11_07_015319) do
 
   create_table "rooms", force: :cascade do |t|
     t.string "room_name"
-    t.integer "room_category_id"
+    t.integer "room_category"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

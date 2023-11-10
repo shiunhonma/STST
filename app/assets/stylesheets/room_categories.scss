@@ -3,15 +3,30 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .btnx-indigo-light{
-    background: #4169e1;
-    //border: 2px solid #4169e1;
-    margin-right: 30px;
-    width: 10em;
-    height:10em;
+    margin: 20px;
+    width: 15em; 
+    height:15em; 
     line-height: 3;
-    //padding: 10px 0;
+    padding: 20px ;
     text-align: center;
+    //position: relative;
+    justify-content: center;
 }
+
+.btn_wrap{
+    display: flex;
+    align-items: center;
+}
+
+.btn_wrap a h3{
+    padding-top: 100px;
+}
+
+//.btnx-indigo-light a{
+    //position:absolute;
+    //top: 50%;
+    //left: 50%;
+//}
 //.btnx-indigo-light span{
     //display: table-cell;
     //text-align: center;
