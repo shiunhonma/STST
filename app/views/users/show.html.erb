@@ -33,6 +33,7 @@
         <div class="col-md-12 border text-center">
             <%= form.label "名前を入力" %>
             <%= form.text_field :name , :size=>"40" %>
+            
         </div>
     </div>
     <div class="row">
@@ -45,9 +46,10 @@
     <div class="row">
         <div class="col-md-4 border text-center">
             <%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '200', :height => '200' )%>
-        <p>現在のアイコン</p>
+            <p>現在のアイコン</p>
         </div>
         <div class="col-md-8 border text-center">
+        <%= form.file_field :icon , :size=>"40" %>
         </div>
     </div>
 <% end %>

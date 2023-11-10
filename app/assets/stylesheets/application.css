@@ -45,9 +45,8 @@
 .icon{
     
     padding: 140px 0px;
-    background-color: crimson;
     
-    border-radius: 50%;
+    
 }
 
 .point_box{
@@ -61,7 +60,7 @@
 .icon_box{
   width: 100%;
   height: 450px;
-  
+  border-radius: 50%;
 }
 
 .aaaaa{
@@ -93,7 +92,7 @@ button.btn {
   line-height: 1.5;
   position: relative;
   display: inline-block;
-  padding: 0.8rem 3.8rem;
+  padding: 1.8rem 3.8rem;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
