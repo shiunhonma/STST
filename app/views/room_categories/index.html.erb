@@ -11,10 +11,13 @@
     <% elsif a == 3 %>
       <% b = 'puro' %>
     <% end %>
-    <%= link_to room_category.category_name, room_category, class: 'btn btn-light btnx-indigo-light', id: b %>
+    <div class="d-inline align-middle"><%= link_to room_category.category_name, room_category, class: 'btn btn-light btnx-indigo-light', id: b %></div>
   <% end %>
 </div>
 
 <br>
 
 <%= link_to 'New Room Category', new_room_category_path %>
+<br>
+<!--a herf="../"><h2>資格</h2></a>
+  
