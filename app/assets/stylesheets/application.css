@@ -87,7 +87,7 @@
 .btn,
 a.btn,
 button.btn {
-  font-size: 1.6rem;
+  
   font-weight: 700;
   line-height: 1.5;
   position: relative;
@@ -113,24 +113,28 @@ button.btn {
 .btn--chat,
 a.btn--chat {
   color: #fff;
+  font-size: 1.6rem;
   background-color: #49d309;
 }
 
 .btn--chat:hover,
 a.btn--chat:hover {
   color: #fff;
+  font-size: 1.6rem;
   background: #45f500;
 }
 
 .btn--ranking,
 a.btn--ranking {
   color: #fff;
+  font-size: 1.6rem;
   background-color: #ffe607;
 }
 
 .btn--ranking:hover,
 a.btn--ranking:hover {
   color: #fff;
+  font-size: 1.6rem;
   background: #fbff06;
 }
 
