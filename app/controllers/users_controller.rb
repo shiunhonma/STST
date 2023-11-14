@@ -43,8 +43,8 @@ class UsersController < ApplicationController
     def update
         @user = User.find(params[:id])
     respond_to do |format|
-      if @user.update(user_params_update)
-        format.html { redirect_to home_mypage_path, notice: "User room was successfully updated." }
+      if @user.update(icon_attributes)
+        format.html { redirect_to home_mypage_path, notice: "User  was successfully updated." }
       else
         format.html { render :show, status: :unprocessable_entity }
       end
@@ -62,6 +62,12 @@ class UsersController < ApplicationController
             params.require(:user).permit(:email, :password, :password_confirmation, :name)
         end
         def user_params_update
-            params.require(:user).permit(:name)
+            params.require(:user).permit(:name, :icon)
+        end
+
+        def icon_attributes
+        {
+            name: user_params_update[:name], icon: user_params_update[:icon].read
+        }
         end
 end
