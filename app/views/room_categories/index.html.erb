@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 <% a = 0%>
 <h1>資格・各教科の部屋</h1>
+
 <div class="btn_wrap">
   <% @room_categories.each do |room_category| %>
     <% a += 1 %>
@@ -19,5 +20,3 @@
 
 <%= link_to 'New Room Category', new_room_category_path %>
 <br>
-<!--a herf="../"><h2>資格</h2></a>
-  

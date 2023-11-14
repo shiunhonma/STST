@@ -93,7 +93,7 @@ button.btn {
   line-height: 1.5;
   position: relative;
   display: inline-block;
-  padding: 0.8rem 3.8rem;
+  
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -115,24 +115,28 @@ button.btn {
 a.btn--chat {
   color: #fff;
   background-color: #49d309;
+  padding: 1.8rem 3.8rem;
 }
 
 .btn--chat:hover,
 a.btn--chat:hover {
   color: #fff;
   background: #45f500;
+  padding: 1.8rem 3.8rem;
 }
 
 .btn--ranking,
 a.btn--ranking {
   color: #fff;
   background-color: #ffe607;
+  padding: 1.8rem 3.8rem;
 }
 
 .btn--ranking:hover,
 a.btn--ranking:hover {
   color: #fff;
   background: #fbff06;
+  padding: 1.8rem 3.8rem;
 }
 
 /* ここから設定（プロファイル）*/
