@@ -11,6 +11,12 @@
       <% b = 'sugaku' %>
     <% elsif a == 3 %>
       <% b = 'puro' %>
+    <% elsif a == 4 %>
+      <% b = 'boki' %>
+    <% elsif a == 5 %>
+      <% b = 'rika' %>
+    <% elsif a == 6 %>
+      <% b = 'kokugo' %>
     <% end %>
     <div class="d-inline align-middle"><%= link_to room_category.category_name, room_category, class: 'btn btn-light btnx-indigo-light', id: b %></div>
   <% end %>

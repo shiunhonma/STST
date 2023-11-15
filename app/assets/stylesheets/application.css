@@ -84,35 +84,7 @@
 .root_home{
   text-align: right;
 }
-.btn,
-a.btn,
-button.btn {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
-  display: inline-block;
-<<<<<<< HEAD
-  
-=======
-  padding: 1.8rem 3.8rem;
->>>>>>> d05672e57bcd1881e35304b3ab84b1c8efdba782
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
-  
-  
-}
+
 
 .btn--chat,
 a.btn--chat {
