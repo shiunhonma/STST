@@ -26,5 +26,11 @@
       </tr>
     </table>
   <% end %>
-  <%= link_to 'ホーム', home_index_path %>
+
+  <% @rooms.each do |room| %>
+    
+  <% end %>
+
+  <%= link_to 'ホーム', home_index_path %><br>
+  <%= link_to '部屋追加', new_room_path %>
 </div>

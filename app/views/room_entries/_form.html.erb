@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
+    <%= form.label "名前" %>
+    <%= @user.name %>
   </div>
 
   <div class="field">
-    <%= form.label :flag %>
-    <%= form.check_box :flag %>
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
   </div>
 
   <div class="actions">

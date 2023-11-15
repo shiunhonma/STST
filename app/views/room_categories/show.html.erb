@@ -4,17 +4,19 @@
   <strong><%= @room_category.category_name %></strong>
 </p>
 
-<table>
-  <tbody>
     <% @rooms.each do |room| %>
-      <tr class='btn btn-light btnx-indigo-light'>
-        <td><%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '50', :height => '50' )%></td>
-        <td><%= room.room_name %></td>
-        <td><%= room.comment %></td>
-        <td><%= room.user.name %></td>
-      </tr>
+      <%= link_to(new_room_entry_path, class: "list-design") do %>
+        <div class='btn btn-light btnx-indigo-light'>
+          <p><%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '50', :height => '50' )%></td>
+          <p><%= room.room_name %></p>
+          <p><%= room.comment %></p>
+          <p><%= room.user.name %></p>
+        </div>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
 
+<br>
+
+<%= link_to 'ホーム', home_index_path %><br>
+<%= link_to '部屋追加', new_room_path%><br>
 <%= link_to 'Back', room_categories_path %>
