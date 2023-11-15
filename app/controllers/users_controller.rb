@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         @user.point = 0
         @user.taught_member = 0
         @user.student_member = 0
-        image_path = Rails.root.join("public/images/", "STST_initial.jpg")
+        image_path = Rails.root.join("public/images/", "STST_initial.png")
         File.open(image_path,"r+b") do |f|
             @user.icon = f.read
         end
@@ -66,8 +66,14 @@ class UsersController < ApplicationController
         end
 
         def icon_attributes
-        {
-            name: user_params_update[:name], icon: user_params_update[:icon].read
-        }
+            if user_params_update[:icon] == nil
+                {
+                name: user_params_update[:name]
+                }
+            else
+                {
+                name: user_params_update[:name], icon: user_params_update[:icon].read    
+                }
+            end
         end
 end

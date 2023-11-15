@@ -84,11 +84,40 @@
 .root_home{
   text-align: right;
 }
+<<<<<<< HEAD
 
+=======
+.btn,
+a.btn,
+button.btn {
+  
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1.8rem 3.8rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+  
+  
+}
+>>>>>>> 074e6ad95197ac351f5f4a32ae942b2ba3ed6676
 
 .btn--chat,
 a.btn--chat {
   color: #fff;
+  font-size: 1.6rem;
   background-color: #49d309;
   padding: 1.8rem 3.8rem;
 }
@@ -96,6 +125,7 @@ a.btn--chat {
 .btn--chat:hover,
 a.btn--chat:hover {
   color: #fff;
+  font-size: 1.6rem;
   background: #45f500;
   padding: 1.8rem 3.8rem;
 }
@@ -103,6 +133,7 @@ a.btn--chat:hover {
 .btn--ranking,
 a.btn--ranking {
   color: #fff;
+  font-size: 1.6rem;
   background-color: #ffe607;
   padding: 1.8rem 3.8rem;
 }
@@ -110,6 +141,7 @@ a.btn--ranking {
 .btn--ranking:hover,
 a.btn--ranking:hover {
   color: #fff;
+  font-size: 1.6rem;
   background: #fbff06;
   padding: 1.8rem 3.8rem;
 }
@@ -124,5 +156,23 @@ a.btn--ranking:hover {
   border: solid 1px black;
   justify-content: space-between;
 }
+
+
+.btn_update_setting,
+a.btn_update_setting {
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  background-color: #099ad3;
+}
+
+.btn_update_setting:hover,
+a.btn_update_setting:hover {
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  background: #0cb5f8;
+}
+
 
 
