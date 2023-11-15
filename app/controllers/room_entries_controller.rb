@@ -13,6 +13,7 @@ class RoomEntriesController < ApplicationController
   # GET /room_entries/new
   def new
     @room_entry = RoomEntry.new
+    @user = current_user
   end
 
   # GET /room_entries/1/edit
@@ -25,7 +26,7 @@ class RoomEntriesController < ApplicationController
 
     respond_to do |format|
       if @room_entry.save
-        format.html { redirect_to room_entry_url(@room_entry), notice: "Room entry was successfully created." }
+        format.html { redirect_to room_entry_url(@room_entry), notice: "申請を出しました。" }
         format.json { render :show, status: :created, location: @room_entry }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -36,13 +37,23 @@ class RoomEntriesController < ApplicationController
 
   # PATCH/PUT /room_entries/1 or /room_entries/1.json
   def update
-    respond_to do |format|
+    ActiveRecord::Base.transaction do
       if @room_entry.update(room_entry_params)
-        format.html { redirect_to room_entry_url(@room_entry), notice: "Room entry was successfully updated." }
-        format.json { render :show, status: :ok, location: @room_entry }
+
+        @room = Room.find(@room_entry.room_id)
+
+        # UserRoomにログインユーザーを作成する
+        @userroom1 = UserRoom.new(:room_id => @room.id, :user_id => @room.user_id)
+        @userroom1.save
+
+        # UserRoomにチャット相手を作成する
+        @userroom2 = UserRoom.new(:room_id => @room.id, :user_id => @room_entry.user_id)
+        @userroom2.save
+
+        #チャット画面に遷移する
+        redirect_to room_path(@room.id)
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @room_entry.errors, status: :unprocessable_entity }
+        render :edit, status: :unprocessable_entity
       end
     end
   end
@@ -65,6 +76,6 @@ class RoomEntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_entry_params
-      params.require(:room_entry).permit(:comment, :flag)
+      params.require(:room_entry).permit(:comment, :flag, :user_id)
     end
 end

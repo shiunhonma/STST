@@ -3,8 +3,8 @@ class RoomsController < ApplicationController
 
   # GET /rooms or /rooms.json
   def index
-    # @rooms = Room.all
     @user = current_user
+    @rooms = Room.where(user_id:@user.id)
     @currentUserRooms = current_user.user_rooms
 
     myRoomIds = []
@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
       @chats = @room.chats
       @userrooms = @room.user_rooms
     else
-      redirect_to profile_path
+      redirect_to room_categories_path
     end
   end
 
@@ -49,21 +49,6 @@ class RoomsController < ApplicationController
       end
     end
 
-    # ActiveRecord::Base.transaction do
-    #   @room = Room.new
-    #   @room.save
-
-    #   # UserRoomにログインユーザーを作成する
-    #   @userroom1 = UserRoom.new(:room_id => @room.id, :user_id => current_user.id)
-    #   @userroom1.save
-
-    #   # UserRoomにチャット相手を作成する
-    #   @userroom2 = UserRoom.new(:room_id => @room.id, :user_id => params[:user_room][:user_id])
-    #   @userroom2.save
-    # end
-
-    # チャット画面に遷移する
-    # redirect_to room_path(@room.id)
   end
 
   # PATCH/PUT /rooms/1 or /rooms/1.json
