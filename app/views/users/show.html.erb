@@ -16,9 +16,6 @@
     <% end %>
 
 
-    <div class="actions">
-        <%= form.submit %>
-    </div>
 
     <div class="row">
         <div class="col-md-4 border text-center">
@@ -33,7 +30,6 @@
         <div class="col-md-12 border text-center">
             <%= form.label "名前を入力" %>
             <%= form.text_field :name , :size=>"40" %>
-            
         </div>
     </div>
     <div class="row">
@@ -51,6 +47,9 @@
         <div class="col-md-8 border text-center">
         <%= form.file_field :icon , :size=>"40" %>
         </div>
+    </div>
+    <div class="actions ">
+        <%= form.submit class: "btn btn_update_setting" %>
     </div>
 <% end %>
 
