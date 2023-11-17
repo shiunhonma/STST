@@ -76,6 +76,6 @@ class RoomEntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_entry_params
-      params.require(:room_entry).permit(:comment, :flag, :user_id)
+      params.require(:room_entry).permit(:comment, :flag, :user_id, :room_id)
     end
 end

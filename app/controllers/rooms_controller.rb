@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   # GET /rooms or /rooms.json
   def index
     @user = current_user
-    @rooms = Room.where(user_id:@user.id)
+    @rooms = Room.all.where(user_id:@user.id)
     @currentUserRooms = current_user.user_rooms
 
     myRoomIds = []
@@ -21,8 +21,6 @@ class RoomsController < ApplicationController
     if UserRoom.where(:user_id => current_user.id, :room_id => @room.id).present?
       @chats = @room.chats
       @userrooms = @room.user_rooms
-    else
-      redirect_to room_categories_path
     end
   end
 
