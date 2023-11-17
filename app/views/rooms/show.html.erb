@@ -1,31 +1,37 @@
-<% @userrooms.each do |e| %>
-  <% current_user == e.user ? @class = "current_user" : @class = "" %>
-  <% if e.user != current_user %>
-    <h5 class="text-left <%= @class %>" id="<%= @class %>" style="font-size: 30px;" data-user_id="<%= e.user.id %>">
-      <%= link_to 'ホーム', home_index_path %>
-      <%= "@#{e.user.name}" %>
-    </h5>
-  <% else %>
-    <h5 class="text-left <%= @class %>" id="<%= @class %>" data-user_id="<%= e.user.id %>"></h5>
+<% unless @userrooms == nil %>
+  <% @userrooms.each do |e| %>
+    <% current_user == e.user ? @class = "current_user" : @class = "" %>
+    <% if e.user != current_user %>
+      <h5 class="text-left <%= @class %>" id="<%= @class %>" style="font-size: 30px;" data-user_id="<%= e.user.id %>">
+        <%= link_to 'ホーム', home_index_path %>
+        <%= "@#{e.user.name}" %>
+      </h5>
+    <% else %>
+      <h5 class="text-left <%= @class %>" id="<%= @class %>" data-user_id="<%= e.user.id %>"></h5>
+    <% end %>
   <% end %>
+
+  <div id="chats" data-room_id="<%= @room.id %>">
+    <%= render @chats %>
+  </div>
+
+  <form>
+    <label style="color: black;" id="target">新しいメッセージを作成</label><br>
+    <input type="text" id="chat_input" data-behavior="room_speaker" class="form-control">
+  </form>
+
+  <%= link_to '編集', edit_room_path(@room) %> |
+  <%= link_to '戻る', rooms_path %>
+
+  <script>
+    var element = document.getElementById('chat_input'); //移動させたい一の要素を取得
+    element.scrollIntoView();
+  </script>
+<% else %>
+  <p>aaaaaaaaa</p>
+
 <% end %>
 
-<div id="chats" data-room_id="<%= @room.id %>">
-  <%= render @chats %>
-</div>
-
-<form>
-  <label style="color: black;" id="target">新しいメッセージを作成</label><br>
-  <input type="text" id="chat_input" data-behavior="room_speaker" class="form-control">
-</form>
-
-<%= link_to '編集', edit_room_path(@room) %> |
-<%= link_to '戻る', rooms_path %>
-
-<script>
-  var element = document.getElementById('chat_input'); //移動させたい一の要素を取得
-  element.scrollIntoView();
-</script>
 
 <!--p id="notice"><%= notice %></p>
 
