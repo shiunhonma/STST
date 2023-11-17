@@ -28,8 +28,10 @@
     element.scrollIntoView();
   </script>
 <% else %>
+  <h5 class="text-left" style="font-size: 30px;" data-user_id="メンバーがいません">
+  <%= link_to 'ホーム', home_index_path %>
   <p>aaaaaaaaa</p>
-
+  <%= link_to '戻る', rooms_path %>
 <% end %>
 
 
