@@ -13,11 +13,14 @@ class RoomEntriesController < ApplicationController
   # GET /room_entries/new
   def new
     @room_entry = RoomEntry.new
+    @room_entry.room_id = params[:room_id]
+    @room_entry.user_id = current_user.id
     @user = current_user
   end
 
   # GET /room_entries/1/edit
   def edit
+    @user = current_user
   end
 
   # POST /room_entries or /room_entries.json

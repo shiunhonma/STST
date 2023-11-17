@@ -21,7 +21,14 @@
     <%= form.text_field :comment %>
   </div>
 
+  <%= form.hidden_field :room_id, value: room_entry.room_id %>
+  <%= form.hidden_field :user_id, value: room_entry.user_id %>
+
   <div class="actions">
-    <%= form.submit %>
+      <%= form.submit %>
+
   </div>
+
+
+
 <% end %>

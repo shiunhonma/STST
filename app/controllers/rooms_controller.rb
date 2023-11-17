@@ -73,7 +73,7 @@ class RoomsController < ApplicationController
 
     room = Room.find(params[:id])
     room.destroy
-    redirect_to profile_path
+    redirect_to rooms_path
   end
 
   private
