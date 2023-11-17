@@ -6,7 +6,6 @@
     margin: 20px;
     width: 20vw;
     height: 20vw;
-    //line-height: 3;
     padding-top:7vw;
     justify-content: center;
 
@@ -16,9 +15,6 @@
     align-items: center;
 }
 
-//.btn_wrap a h3{
-    //padding-top: 100px;
-//}
 
 //.btnx-indigo-light a{
     //position:absolute;
@@ -33,7 +29,7 @@
 
 #shikaku{
     background-color:#ff69b4 ;
-   font-size: 3vw;
+    font-size: 3vw;
 }
 #sugaku{
     background-color:#4169e1;
@@ -43,15 +39,6 @@
     background-color: #778899;
     font-size: 2vw;
 }
-<<<<<<< HEAD
-
-
-
-.text-de a:hover {
-    text-decoration: none;
-    width: 1px;
-}
-=======
 #boki{
     background-color: burlywood;
     font-size: 3vw;
@@ -64,4 +51,13 @@
     background-color: #b22222;
     font-size: 3vw;
 }
->>>>>>> 9b033986b93725a3ac403cb72b216c9262f7719f
+
+@media (max-width: 1030px) {
+    .btnx-indigo-light{
+        display: flex;
+        flex-flow: column;
+        margin: 0 auto;
+        padding: 10px;
+        width: 100%;
+    }
+}

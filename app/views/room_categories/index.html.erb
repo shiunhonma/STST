@@ -2,6 +2,9 @@
 <% a = 0%>
 <h1>資格・各教科の部屋</h1>
 
+<div class="row">
+<div class="col">
+
 <div class="btn_wrap">
   <% @room_categories.each do |room_category| %>
     <% a += 1 %>
@@ -17,13 +20,19 @@
       <% b = 'rika' %>
     <% elsif a == 6 %>
       <% b = 'kokugo' %>
+      
     <% end %>
     <div class="d-inline align-middle"><%= link_to room_category.category_name, room_category, class: 'btn btn-light btnx-indigo-light', id: b %></div>
   <% end %>
 </div>
 
+</div>
+</div>
+
 <br>
 
-<%= link_to 'ホーム', home_index_path %><br>
+ <div class="root_home">
+    <%= link_to image_tag('/images/home.jpg' , class:"home" ,:width => '100', :height => '100' ), home_index_path  %>
+  </div><br>
 <%= link_to 'New Room Category', new_room_category_path %>
 <br>

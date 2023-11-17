@@ -70,3 +70,4 @@ class RoomCategoriesController < ApplicationController
       params.require(:room_category).permit(:category_name)
     end
 end
+
