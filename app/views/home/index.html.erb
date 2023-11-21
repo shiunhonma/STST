@@ -1,6 +1,36 @@
-<h1>ホーム</h1>
+<header>ホーム</header>
+<!--
 <%= link_to 'マイページ', home_mypage_path%>
 <br>
 <%= link_to 'ルーム', rooms_path %>
 <br>
 <%= link_to '選択部屋', room_categories_path %>
+-->
+<div class="row ">
+  <div class="col-md-6 border">
+    <div class="student_member">
+    <p>aaaaa</p>
+    </div>
+  </div>
+  
+  <div class="col-md-6 border">
+
+    <div class="row ">
+      <div class="col-md-12 border">
+        <%= link_to '選択部屋', room_categories_path %>
+      </div>
+    </div>
+
+    <div class="row ">
+      <div class="col-md-12 border">
+        <%= link_to 'ルーム', rooms_path %>
+      </div>
+    </div>
+
+    <div class="row ">
+      <div class="col-md-12 border aaaaa">
+        <%= link_to 'マイページ', home_mypage_path , {class: "btn btn_mypage rounded-pill align-items-center d-flex"}%>
+      </div>
+    </div>
+  </div>
+</div>
