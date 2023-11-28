@@ -1,6 +1,56 @@
-<h1>ホーム</h1>
+<div class = Mypage><!-- とりあえず-->
+  <h1 class ="Mypage_text">ホーム</h1>
+</div>
+<!--
 <%= link_to 'マイページ', home_mypage_path%>
 <br>
 <%= link_to 'ルーム', rooms_path %>
 <br>
 <%= link_to '選択部屋', room_categories_path %>
+-->
+<div class="row ">
+  <div class="col-md-6 border">
+    <div class="student_member">
+      <% @rooms.each do |room| %>
+      <table>
+        <tr>
+          <td>
+            <%= link_to room_path(room.id) do %>
+              <%= room.room_name %>
+            <% end %>
+          </td>
+          <td>
+            <%= room.room_category.category_name %>
+          </td>
+          <td>
+            <p>メンバーがいません</p>
+          </td>
+          <td>
+           
+        </tr>
+      </table>
+  <% end %>
+    </div>
+  </div>
+  
+  <div class="col-md-6 border">
+
+    <div class="row ">
+      <div class="col-md-12 border">
+        <%= link_to '教える', room_categories_path %>
+      </div>
+    </div>
+
+    <div class="row ">
+      <div class="col-md-12 border">
+        <%= link_to '教えてもらう', new_room_path %>
+      </div>
+    </div>
+
+    <div class="row ">
+      <div class="col-md-12 border aaaaa">
+        <%= link_to 'マイページ', home_mypage_path , {class: "btn btn_mypage rounded-pill align-items-center d-flex"}%>
+      </div>
+    </div>
+  </div>
+</div>

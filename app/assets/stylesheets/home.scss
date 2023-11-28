@@ -1,3 +1,20 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.btn_mypage{
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background: #6fa1ff;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px 0;
+}
+.btn_mypage:hover{
+    background: #87b1ff;
+}
+.student_member{
+    height: 260px;
+    overflow-y: scroll;
+}
