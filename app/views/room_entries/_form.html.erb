@@ -24,11 +24,19 @@
   <%= form.hidden_field :room_id, value: room_entry.room_id %>
   <%= form.hidden_field :user_id, value: room_entry.user_id %>
 
-  <div class="actions">
-      <%= form.submit %>
-
-  </div>
-
+  <% if :room_id == current_user.id %>
+    <div class="actions">
+      <%= form.submit "拒否" %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= form.submit "承認" %>
+    </div>
+  <% else %>
+    <div class="actions">
+      <%= form.submit "申請" %>
+    </div>
+  <% end %>
 
 
 <% end %>

@@ -3,7 +3,6 @@ class CreateRoomEntries < ActiveRecord::Migration[6.1]
     create_table :room_entries do |t|
       t.text :comment
       t.boolean :flag
-      t.integer :user_id
 
       t.timestamps
     end
