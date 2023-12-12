@@ -1,5 +1,8 @@
-<% unless @userrooms == nil %>
-
+<% unless @userroom == nil %>
+  <%= @userroom.user_id %>
+  <% @userrooms.each do |e| %>
+    <%= e.user_id %>
+  <% end %>
   <% @userrooms.each do |e| %>
     <% current_user == e.user ? @class = "current_user" : @class = "" %>
     <% if e.user != current_user %>
@@ -21,7 +24,8 @@
     <input type="text" id="chat_input" data-behavior="room_speaker" class="form-control">
   </form>
 
-  <% if current_user.id == @userrooms.user_id %>
+
+  <% if current_user.id == @userroom.user_id %>
     <%= link_to '編集', edit_room_path(@room) %> |
   <% end %>
   <%= link_to '戻る', rooms_path %>
