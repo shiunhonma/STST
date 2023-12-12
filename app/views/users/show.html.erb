@@ -48,7 +48,7 @@
     </div>
     <div class="row">
         <div class="col-md-4 border text-center">
-            <%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '200', :height => '200' )%>
+            <%= image_tag(url_for(image_of_usericon_path(current_user.id)),class:"rounded-circle",:width => '200', :height => '200' )%>
             <p>現在のアイコン</p>
         </div>
         <div class="col-md-8 border text-center">
