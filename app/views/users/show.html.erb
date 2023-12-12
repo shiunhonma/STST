@@ -15,7 +15,14 @@
         </ul>
     <% end %>
 
-
+    <div class="row">
+        <div class="col-md-4 border text-center">
+            <h1>メールアドレス</h1>
+        </div>
+        <div class="col-md-8 border text-center">
+            <h2><%=current_user.email %></h2>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-4 border text-center">
@@ -45,19 +52,40 @@
             <p>現在のアイコン</p>
         </div>
         <div class="col-md-8 border text-center">
-        <%= form.file_field :icon , :size=>"40" %>
+            
+            <div id="img"></div>
+            <script>
+            // 選択した画像ファイルのプレビューを生成する関数を定義します。
+                function preview(obj) {
+                // 選択した全てのファイルに対してループ処理をします。
+                for (i = 0; i < obj.files.length; i++) {
+                    // FileReaderオブジェクトを作成します。これによりブラウザ上でファイルを読み込むことが可能になります。
+                    let fileReader = new FileReader();
+                    // onloadイベントハンドラを設定します。ファイルが正常に読み込まれたときに呼び出されます。
+                    fileReader.onload = ((e)=> {
+                        // 読み込んだ画像ファイルをData URLとしてimg要素に設定します。
+                        // これにより、選択した画像がブラウザ上でプレビュー表示されます。
+                        document.querySelector('#img').innerHTML += '<img src="' + e.target.result + '"  width="200" height="200" class="rounded-circle">';
+                    });
+                    // ファイルをData URLとして読み込みます。
+                    fileReader.readAsDataURL(obj.files[i]);
+                    }
+                }
+            </script>
+            <%= form.label :icon , "アイコンを選択", class: "btn btn--form" %>
+            <%= form.file_field :icon , :size=>"40", class: "form_file" ,onchange:"preview(this);" %>
         </div>
     </div>
-    <div class="actions ">
-        <%= form.submit class: "btn btn_update_setting" %>
+    <div class="row">
+        <div class="btns">
+            <div class="actions btn_space">
+                <%= form.submit class: "btn btn_update_setting" %>
+            </div>
+            <p><%= link_to 'ログアウト', logout_path, class: "btn btn_delete" , method: :delete %></p>
+            <p><%= link_to '登録解除', unsubscribe_path, class: "btn btn_logout" , method: :delete, data: { confirm: '本当に登録解除しますか？' } %></p>
+        </div>
     </div>
 <% end %>
 
 
-<h1>利用者情報</h1>
 
-<p>メールアドレス:<%=current_user.email %></p>
-<p><%= link_to 'ログアウト', logout_path, method: :delete %></p>
-<p><%= link_to '登録解除', unsubscribe_path, method: :delete, data: { confirm: '本当に登録解除しますか？' } %></p>
-
-<p><%= current_user.name %></p>

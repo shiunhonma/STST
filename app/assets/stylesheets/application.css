@@ -146,4 +146,67 @@ a.btn_update_setting:hover {
 }
 
 
+.btn_delete,
+a.btn_delete {
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  background-color: #d39d09;
+}
+
+.btn_delete:hover,
+a.btn_delete:hover {
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  background: #f7b80d;
+}
+
+
+.btn_logout,
+a.btn_logout {
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  background-color: #313131;
+}
+
+.btn_logout:hover,
+a.btn_logout:hover {
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  background: #494949;
+}
+
+.btns{
+  display: flex;
+  
+  padding-top: 10px;
+}
+.btn_space{
+  margin-right: auto;
+}
+
+
+
+.btn--form,
+a.btn--form {
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.0rem;
+  background-color: #313131;
+}
+
+.btn--form:hover,
+a.btn--form:hover {
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.0rem;
+  background: #494949;
+}
+.form_file{
+  display: none;
+}
+
 
