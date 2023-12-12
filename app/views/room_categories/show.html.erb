@@ -7,17 +7,26 @@
     <% @rooms.each do |room| %>
       <% unless room.user.id == current_user.id %>
         <%= link_to(new_room_entry_path(:room_id => room.id), class: "list-design") do %>
-          <div class='btn btn-light btnx-indigo-light'>
-            <p><%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '50', :height => '50' )%></td>
-            <p><%= room.room_name %></p>
-            <p><%= room.comment %></p>
-            <p><%= room.user.name %></p>
+          <div class='btn btn-light show'>
+            <p class='element1'><%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '50', :height => '50' )%></td>
+            <p class='element2'><%= room.user.name %></p>
+            <p class='element3'><%= room.room_name %></p>
           </div>
         <% end %>
       <% end %>
     <% end %>
 
 <br>
+
+<% @rooms.each do |room| %>
+      <% unless room.user.id == current_user.id %>
+        <%= link_to(new_room_entry_path(:room_id => room.id), class: "list-design") do %>
+          <div class='btn btn-light show'>
+            <p class='element4'><%= room.comment %></p>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
 
 <%= link_to 'ホーム', home_index_path %><br>
 <%= link_to '部屋追加', new_room_path%><br>
