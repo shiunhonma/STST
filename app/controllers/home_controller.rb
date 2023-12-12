@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     @user = current_user
-    @rooms = Room.all.where(user_id:@user.id)
+    @rooms = UserRoom.where(user_id:@user.id)
     @currentUserRooms = current_user.user_rooms
 
     myRoomIds = []

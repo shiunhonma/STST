@@ -24,7 +24,7 @@
   <%= form.hidden_field :room_id, value: room_entry.room_id %>
   <%= form.hidden_field :user_id, value: room_entry.user_id %>
 
-  <% if :room_id == current_user.id %>
+  <% if current_user.id == room_entry.room.user_id %>
     <div class="actions">
       <%= form.submit "拒否" %>
     </div>
@@ -32,6 +32,14 @@
     <div class="actions">
       <%= form.submit "承認" %>
     </div>
+
+    <%#= form_for Room.new, url: rooms_path do |r| %>
+      <%#= fields_for UserRoom.new do |url| %>
+        <%#= url.hidden_field :user_id, :value=> room_entry.user_id %>
+      <%# end %>
+      <%#= button_tag "承認", type: "submit", id: "chat_submit" %>
+    <%# end %>
+
   <% else %>
     <div class="actions">
       <%= form.submit "申請" %>

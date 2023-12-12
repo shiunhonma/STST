@@ -21,6 +21,8 @@ class RoomEntriesController < ApplicationController
   # GET /room_entries/1/edit
   def edit
     @user = current_user
+    # @room = Room.where(Room.user_id => current_user.id).present?
+    # @room = Room.find(params[:user_id])
   end
 
   # POST /room_entries or /room_entries.json
