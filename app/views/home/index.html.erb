@@ -14,24 +14,23 @@
   <div class="col-md-6 border">
     <div class="student_member">
       <% @rooms.each do |room| %>
-      <table>
-        <tr>
-          <td>
-            <%= link_to room_path(room.id) do %>
-              <%= room.room.room_name %>
-            <% end %>
-          </td>
-          <td>
-            <%= room.room.room_category.category_name %>
-          </td>
-          <td>
-            <p>メンバーがいません</p>
-          </td>
-          <td>
-           
-        </tr>
-      </table>
-  <% end %>
+        <table>
+          <tr>
+            <td>
+              <%= link_to room_path(room.id) do %>
+                <%= room.room.room_name %>
+              <% end %>
+            </td>
+            <td>
+              <%= room.room.room_category.category_name %>
+            </td>
+            <td>
+              <p>メンバーがいません</p>
+            </td>
+            <td>
+          </tr>
+        </table>
+      <% end %>
     </div>
   </div>
   
