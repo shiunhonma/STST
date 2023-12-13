@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_12_021310) do
+ActiveRecord::Schema.define(version: 2023_12_13_033732) do
 
   create_table "chats", force: :cascade do |t|
     t.text "message"
@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(version: 2023_12_12_021310) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "point"
     t.binary "icon"
-    t.integer "taught_member"
-    t.integer "student_member"
+    t.integer "student_memder"
+    t.integer "teacher_memder"
   end
 
 end
