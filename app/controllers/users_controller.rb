@@ -21,7 +21,7 @@ class UsersController < ApplicationController
         end
         if @user.save
             log_in(@user)
-            redirect_to profile_path
+            redirect_to home_mypage_path
         else
             render 'new'
         end
