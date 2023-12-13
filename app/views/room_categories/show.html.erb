@@ -4,18 +4,18 @@
   <strong><%= @room_category.category_name %></strong>
 </p>
 
-    <% @rooms.each do |room| %>
-      <% unless room.user.id == current_user.id %>
-        <%= link_to(new_room_entry_path(:room_id => room.id), class: "list-design") do %>
-          <div class='btn btn-light btnx-indigo-light'>
-            <p><%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '50', :height => '50' )%></td>
-            <p><%= room.room_name %></p>
-            <p><%= room.comment %></p>
-            <p><%= room.user.name %></p>
-          </div>
-        <% end %>
-      <% end %>
+<% @rooms.each do |room| %>
+  <% unless room.user.id == current_user.id %>
+    <%= link_to(new_room_entry_path(:room_id => room.id), class: "list-design") do %>
+      <div class='btn btn-light btnx-indigo-light'>
+        <p><%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '50', :height => '50' )%></td>
+        <p><%= room.room_name %></p>
+        <p><%= room.comment %></p>
+        <p><%= room.user.name %></p>
+      </div>
     <% end %>
+  <% end %>
+<% end %>
 
 <br>
 

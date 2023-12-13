@@ -13,19 +13,27 @@
 <div class="row ">
   <div class="col-md-6 border">
     <div class="student_member">
-      <% @rooms.each do |room| %>
+      <% @anotherUserRooms.each do |userroom| %>
       <table>
         <tr>
           <td>
-            <%= link_to room_path(room.id) do %>
-              <%= room.room.room_name %>
+            <%= image_tag(url_for(image_of_usericon_path(userroom.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
+          </td>
+          <td>
+            <%= userroom.user.name %>
+          </td>
+          <td>
+            <%= link_to room_path(userroom.room.id) do %>
+              <%= userroom.room.room_name %>
             <% end %>
           </td>
           <td>
-            <%= room.room.room_category.category_name %>
-          </td>
-          <td>
-            <p>メンバーがいません</p>
+            <% chat = Chat.find_by(id: userroom.room.chat_ids.last) %>
+            <% if chat.nil? %>
+              <span>投稿なし</span>
+            <% else %>
+              <%= truncate(chat.message, lingth: 10) %>
+            <% end %>
           </td>
           <td>
            
