@@ -18,13 +18,12 @@
 .show{
     display: flex;
     align-items: center;
-    
 }
-.show:hover .element4{
-    width: 100%;
-    margin: 0;
-    background-color: seagreen;
+.show1{
+    display: flex;
+    align-items: center;
 }
+
 .show .element1{
     width: 33%;
     margin: 0;
@@ -38,11 +37,27 @@
     margin: 0;
 }
 
-.show .element4{
+.show1{
     width: 100%;
-    margin: 0;
-    
+    //margin: 0 auto;
+    display: none;
+    text-align: center;
+    //line-height: 100px;
+    background-color: #c6c7c8;
 }
+
+.show1 .element4 {
+    width: 100%;
+    padding: 30px 0 30px 0;
+    margin: 0;
+    font-size: 2vw;
+    border-radius: 10px;
+}
+.room_scroll{
+    height: 350px;
+    overflow-y: scroll;
+}
+
 //.btnx-indigo-light a{
     //position:absolute;
     //top: 50%;
