@@ -35,6 +35,15 @@
 <% end %>
 
 
+<% @rooms.each do |room| %>
+      <% unless room.user.id == current_user.id %>
+          <div class='btn btn-light show2' id=<%= "room_comment_#{room.id}"%>>
+            <p class='member'><%= room.user.name %></p>
+          </div>
+      <% end %>
+<% end %>
+
+
 <%= link_to 'ホーム', home_index_path %><br>
 <%= link_to '部屋追加', new_room_path%><br>
 <%= link_to 'Back', room_categories_path %>
