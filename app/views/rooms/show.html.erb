@@ -1,10 +1,8 @@
-<% unless @userrooms == nil %>
-
+<% unless @userroom == nil %>
   <% @userrooms.each do |e| %>
     <% current_user == e.user ? @class = "current_user" : @class = "" %>
     <% if e.user != current_user %>
       <h5 class="text-left <%= @class %>" id="<%= @class %>" style="font-size: 30px;" data-user_id="<%= e.user.id %>">
-        <%= link_to 'ホーム', home_index_path %>
         <%= "@#{e.user.name}" %>
       </h5>
     <% else %>
@@ -17,14 +15,17 @@
   </div>
 
   <form>
-    <label style="color: black;" id="target">新しいメッセージを作成</label><br>
+    <label style="color: black;" id="target">新しいメッセージを作成</label>
     <input type="text" id="chat_input" data-behavior="room_speaker" class="form-control">
   </form>
 
-  <% if current_user.id == @userrooms.user_id %>
+  <br>
+
+  <% if current_user.id == @userroom.user_id %>
     <%= link_to '編集', edit_room_path(@room) %> |
   <% end %>
-  <%= link_to '戻る', rooms_path %>
+  <%= link_to '戻る', rooms_path %> |
+  <%= link_to 'ホーム', home_index_path %>
 
   <script>
     var element = document.getElementById('chat_input'); //移動させたい一の要素を取得
@@ -35,7 +36,8 @@
 
   <h5 class="text-left" style="font-size: 30px;" data-user_id="メンバーがいません">
   <%= link_to 'ホーム', home_index_path %>
-  <p>aaaaaaaaa</p>
+  <br><br>
+  <p>メンバーがいないためチャットできません</p>
   <table>
     <tbody>
       <% @room.room_entries.each do |zzz| %>
@@ -46,7 +48,6 @@
     </tbody>
   </table>
 
-  <p>bbbbbbbbbbb</p>
   <%= link_to '戻る', rooms_path %>
 
 <% end %>

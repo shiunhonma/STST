@@ -13,13 +13,15 @@
 
   <tbody>
     <% @room_entries.each do |room_entry| %>
-      <tr>
-        <td><%= room_entry.comment %></td>
-        <td><%= room_entry.flag %></td>
-        <td><%= link_to 'Show', room_entry %></td>
-        <td><%= link_to 'Edit', edit_room_entry_path(room_entry) %></td>
-        <td><%= link_to 'Destroy', room_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if current_user.id == room_entry.room.user_id %>
+        <tr>
+          <td><%= room_entry.user.name %></td>
+          <td><%= room_entry.comment %></td>
+          <td><%= room_entry.flag %></td>
+          <td><%= link_to '詳しく見る', edit_room_entry_path(room_entry) %></td>
+          <td><%= link_to '拒否', room_entry, method: :delete, data: { confirm: '本当に拒否しますか?' } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

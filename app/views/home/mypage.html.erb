@@ -18,7 +18,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 border text-center">
-                        <%= link_to 'チャット', users_path , {class: "btn btn--chat"}%>
+                        <%= link_to 'チャット', rooms_path , {class: "btn btn--chat"}%>
                     </div>
                 </div>
             </div>
@@ -33,8 +33,8 @@
                             <div class="have_point">
                                 <h2>所有ポイント</h2>
                             </div>
-                            <h3><%= current_user.taught_member %>人に教えました！！</h3>
-                            <h3><%= current_user.student_member %>人に教わりました！！</h3>
+                            <h3><%= current_user.student_member %>人に教えました！！</h3>
+                            <h3><%= current_user.teacher_member %>人に教わりました！！</h3>
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 
 
 <div class = setting_head><!-- とりあえず-->
-    <h1 class ="Mypage_text">  設定</h1>
-    <%= link_to image_tag('/images/戻る.jpg' , class:"gear" ,:width => '80', :height => '70' ), home_mypage_path  %>
+    <h1 class ="Mypage_text">設定</h1>
+    <%= link_to image_tag('/images/戻る.jpg' , class:"gear" ,:width => '70', :height => '70' ), home_mypage_path  %>
 </div>
 
 
@@ -48,7 +48,7 @@
     </div>
     <div class="row">
         <div class="col-md-4 border text-center">
-            <%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '200', :height => '200' )%>
+            <%= image_tag(url_for(image_of_usericon_path(current_user.id)),class:"rounded-circle",:width => '200', :height => '200' )%>
             <p>現在のアイコン</p>
         </div>
         <div class="col-md-8 border text-center">
@@ -57,6 +57,7 @@
             <script>
             // 選択した画像ファイルのプレビューを生成する関数を定義します。
                 function preview(obj) {
+                
                 // 選択した全てのファイルに対してループ処理をします。
                 for (i = 0; i < obj.files.length; i++) {
                     // FileReaderオブジェクトを作成します。これによりブラウザ上でファイルを読み込むことが可能になります。
@@ -65,7 +66,7 @@
                     fileReader.onload = ((e)=> {
                         // 読み込んだ画像ファイルをData URLとしてimg要素に設定します。
                         // これにより、選択した画像がブラウザ上でプレビュー表示されます。
-                        document.querySelector('#img').innerHTML += '<img src="' + e.target.result + '"  width="200" height="200" class="rounded-circle">';
+                        document.querySelector('#img').innerHTML = '<img src="' + e.target.result + '"  width="200" height="200" class="rounded-circle">';
                     });
                     // ファイルをData URLとして読み込みます。
                     fileReader.readAsDataURL(obj.files[i]);

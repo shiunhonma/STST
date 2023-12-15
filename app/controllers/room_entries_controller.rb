@@ -21,6 +21,8 @@ class RoomEntriesController < ApplicationController
   # GET /room_entries/1/edit
   def edit
     @user = current_user
+    # @room = Room.where(Room.user_id => current_user.id).present?
+    # @room = Room.find(params[:user_id])
   end
 
   # POST /room_entries or /room_entries.json
@@ -41,6 +43,7 @@ class RoomEntriesController < ApplicationController
   # PATCH/PUT /room_entries/1 or /room_entries/1.json
   def update
     ActiveRecord::Base.transaction do
+      RoomEntry.find(@room_entry.id).delete
       if @room_entry.update(room_entry_params)
 
         @room = Room.find(@room_entry.room_id)

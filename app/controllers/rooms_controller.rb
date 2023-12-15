@@ -18,9 +18,10 @@ class RoomsController < ApplicationController
   # GET /rooms/1 or /rooms/1.json
   def show
     @room = Room.find(params[:id])
-    if UserRoom.where(:user_id => current_user.id, :room_id => @room.id).present?
+    @userrooms = UserRoom.where(:room_id => @room.id)
+    @userroom = @userrooms.find_by(:user_id => current_user.id)
+    if @userrooms.present?
       @chats = @room.chats
-      @userrooms = @room.user_rooms
     end
   end
 

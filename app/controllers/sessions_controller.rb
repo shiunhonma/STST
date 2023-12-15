@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
         if user && user.authenticate(params[:password])
             log_in(user)
             redirect_to home_index_path
+            @login_check = 1
         else
             flash.now[:danger] = 'メールアドレスかパスワードが間違っています。'
             render 'new'

@@ -13,15 +13,15 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         @user.point = 0
-        @user.taught_member = 0
         @user.student_member = 0
+        @user.teacher_member = 0
         image_path = Rails.root.join("public/images/", "STST_initial.png")
         File.open(image_path,"r+b") do |f|
             @user.icon = f.read
         end
         if @user.save
             log_in(@user)
-            redirect_to profile_path
+            redirect_to home_mypage_path
         else
             render 'new'
         end

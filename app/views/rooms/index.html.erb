@@ -3,9 +3,15 @@
     <table class="table table-striped">
       <tr>
         <td>
+          <%= image_tag(url_for(image_of_usericon_path(userroom.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
+        </td>
+        <td>
           <%= link_to room_path(userroom.room.id) do %>
             <%= userroom.user.name %>
           <% end %>
+        </td>
+        <td>
+          <%= userroom.room.room_name %>
         </td>
         <td>
           <% chat = Chat.find_by(id: userroom.room.chat_ids.last) %>
@@ -27,27 +33,32 @@
     </table>
   <% end %>
 
+  <br>
+  <p>メンバーのいない部屋</p>
   <% @rooms.each do |room| %>
-    <table>
-        <tr>
-          <td>
-            <%= link_to room_path(room.id) do %>
-              <%= room.room_name %>
-            <% end %>
-          </td>
-          <td>
-          <%= room.room_category.category_name %>
-          </td>
-          <td>
-            <p>メンバーがいません</p>
-          </td>
-          <td>
-            <%= link_to room_path(room.id), method: :delete do %>
-              削除
-            <% end %>
-          </td>
-      </tr>
-    </table>
+    <% userroom = UserRoom.find_by(:room_id => room.id) %>
+    <% if userroom == nil %>
+      <table class="table table-striped">
+          <tr>
+            <td>
+              <%= link_to room_path(room.id) do %>
+                <%= room.room_name %>
+              <% end %>
+            </td>
+            <td>
+            <%= room.room_category.category_name %>
+            </td>
+            <td>
+              <p>メンバーがいません</p>
+            </td>
+            <td>
+              <%= link_to room_path(room.id), method: :delete do %>
+                削除
+              <% end %>
+            </td>
+        </tr>
+      </table>
+    <% end %>
   <% end %>
 
   <%= link_to 'ホーム', home_index_path %><br>
