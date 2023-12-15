@@ -43,6 +43,7 @@ class RoomEntriesController < ApplicationController
   # PATCH/PUT /room_entries/1 or /room_entries/1.json
   def update
     ActiveRecord::Base.transaction do
+      RoomEntry.find(@room_entry.id).delete
       if @room_entry.update(room_entry_params)
 
         @room = Room.find(@room_entry.room_id)

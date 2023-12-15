@@ -3,6 +3,9 @@
     <table class="table table-striped">
       <tr>
         <td>
+          <%= image_tag(url_for(image_of_usericon_path(userroom.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
+        </td>
+        <td>
           <%= link_to room_path(userroom.room.id) do %>
             <%= userroom.user.name %>
           <% end %>
