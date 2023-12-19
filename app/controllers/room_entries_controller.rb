@@ -49,8 +49,10 @@ class RoomEntriesController < ApplicationController
         @room = Room.find(@room_entry.room_id)
 
         # UserRoomにログインユーザーを作成する
-        @userroom1 = UserRoom.new(:room_id => @room.id, :user_id => @room.user_id)
-        @userroom1.save
+        if 
+          @userroom1 = UserRoom.new(:room_id => @room.id, :user_id => @room.user_id)
+          @userroom1.save
+        end
 
         # UserRoomにチャット相手を作成する
         @userroom2 = UserRoom.new(:room_id => @room.id, :user_id => @room_entry.user_id)
