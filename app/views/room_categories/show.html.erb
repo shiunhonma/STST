@@ -25,7 +25,7 @@
 
 <br>
 
-
+<!--
 <% @rooms.each do |room| %>
       <% unless room.user.id == current_user.id %>
           <div class='btn btn-light show1' id=<%= "room_comment_#{room.id}"%>>
@@ -33,16 +33,19 @@
           </div>
       <% end %>
 <% end %>
-
-
+-->
 <% @rooms.each do |room| %>
-      <% unless room.user.id == current_user.id %>
-          <div class='btn btn-light show2' id=<%= "room_comment_#{room.id}"%>>
-            <p class='member'><%= room.user.name %></p>
-          </div>
+  <% unless room.user.id == current_user.id %>
+      <div class='btn btn-light show1' id=<%= "room_comment_#{room.id}"%>>
+        <p class='element4'><%= room.comment %></p>
+        <p class='member' style="color: blue;"><%= room.user.name %></p>
+        <% @user_rooms = UserRoom.where(id: room.id) %>
+        <% @user_rooms.each do |userroom| %>
+        <p class='member' style="color:red;"><%= userroom.user.name %></p>
       <% end %>
+      </div>
+  <% end %>
 <% end %>
-
 
 <%= link_to 'ホーム', home_index_path %><br>
 <%= link_to '部屋追加', new_room_path%><br>
