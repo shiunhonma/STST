@@ -7,32 +7,66 @@
 <div class="row ">
   <div class="col-md-6 border">
     <div class="student_member">
+      <p>自分の部屋</p>
       <% @anotherUserRooms.each do |userroom| %>
-        <table>
-          <tr>
-            <td>
-              <%= image_tag(url_for(image_of_usericon_path(userroom.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
-            </td>
-            <td>
-              <%= userroom.user.name %>
-            </td>
-            <td>
-              <%= link_to room_path(userroom.room.id) do %>
-                <%= userroom.room.room_name %>
-              <% end %>
-            </td>
-            <td>
-              <% chat = Chat.find_by(id: userroom.room.chat_ids.last) %>
-              <% if chat.nil? %>
-                <span>投稿なし</span>
-              <% else %>
-                <%= truncate(chat.message, lingth: 10) %>
-              <% end %>
-            </td>
-            <td>
+        <% if userroom.room.user_id == current_user.id %>
+          <table>
+            <tr>
+              <td>
+                <%= image_tag(url_for(image_of_usericon_path(userroom.room.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
+              </td>
+              <td>
+                <%= userroom.room.user.name %>
+              </td>
+              <td>
+                <%= link_to room_path(userroom.room.id) do %>
+                  <%= userroom.room.room_name %>
+                <% end %>
+              </td>
+              <td>
+                <% chat = Chat.find_by(id: userroom.room.chat_ids.last) %>
+                <% if chat.nil? %>
+                  <span>投稿なし</span>
+                <% else %>
+                  <%= truncate(chat.message, lingth: 10) %>
+                <% end %>
+              </td>
+              <td>
+            </tr>
+          </table>
+        <% end %>
+      <% end %>
 
-          </tr>
-        </table>
+      <br>
+
+      <p>他の人の部屋</p>
+      <% @anotherUserRooms.each do |userroom| %>
+        <% if userroom.room.user_id != current_user.id %>
+          <table>
+            <tr>
+              <td>
+                <%= image_tag(url_for(image_of_usericon_path(userroom.room.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
+              </td>
+              <td>
+                <%= userroom.room.user.name %>
+              </td>
+              <td>
+                <%= link_to room_path(userroom.room.id) do %>
+                  <%= userroom.room.room_name %>
+                <% end %>
+              </td>
+              <td>
+                <% chat = Chat.find_by(id: userroom.room.chat_ids.last) %>
+                <% if chat.nil? %>
+                  <span>投稿なし</span>
+                <% else %>
+                  <%= truncate(chat.message, lingth: 10) %>
+                <% end %>
+              </td>
+              <td>
+            </tr>
+          </table>
+        <% end %>
       <% end %>
     </div>
   </div>
