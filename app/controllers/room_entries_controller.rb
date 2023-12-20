@@ -48,15 +48,19 @@ class RoomEntriesController < ApplicationController
 
         @room = Room.find(@room_entry.room_id)
 
-        # UserRoomにログインユーザーを作成する
-        if 
+        userroom = open_currentuserroom_record(current_user.id,@room.id)
+        if userroom == nil
+          # UserRoomにログインユーザーを作成する
           @userroom1 = UserRoom.new(:room_id => @room.id, :user_id => @room.user_id)
           @userroom1.save
         end
 
-        # UserRoomにチャット相手を作成する
-        @userroom2 = UserRoom.new(:room_id => @room.id, :user_id => @room_entry.user_id)
-        @userroom2.save
+        userroom = open_anotheruserroom_record(@room_entry.user_id,@room.id)
+        if userroom == nil
+          # UserRoomにチャット相手を作成する
+          @userroom2 = UserRoom.new(:room_id => @room.id, :user_id => @room_entry.user_id)
+          @userroom2.save
+        end
 
         #チャット画面に遷移する
         redirect_to room_path(@room.id)
