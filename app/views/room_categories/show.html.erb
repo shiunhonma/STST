@@ -34,18 +34,44 @@
       <% end %>
 <% end %>
 -->
-<% @rooms.each do |room| %>
-  <% unless room.user.id == current_user.id %>
-      <div class='btn btn-light show1' id=<%= "room_comment_#{room.id}"%>>
-        <p class='element4'><%= room.comment %></p>
-        <p class='member' style="color: blue;"><%= room.user.name %></p>
-        <% @user_rooms = UserRoom.where(id: room.id) %>
-        <% @user_rooms.each do |userroom| %>
-        <p class='member' style="color:red;"><%= userroom.user.name %></p>
+<div class="row">
+  <div class="col-md-6">
+    <% @rooms.each do |room| %>
+      <% unless room.user.id == current_user.id %>
+        <div class='btn btn-light show1' id=<%= "room_comment_#{room.id}"%>>
+          <p class='element4'><%= room.comment %></p>
+        </div>
       <% end %>
-      </div>
-  <% end %>
-<% end %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <% @rooms.each do |room| %>
+      <% unless room.user_id == current_user.id %>
+        <div class='show2' id=<%= "room_member_#{room.id}"%>>
+          <h1>メンバー</h1>
+          <p class='member' style="color: blue;">・<%= room.user.name %></p>
+          <% @user_rooms = UserRoom.where(room_id: room.id) %>
+          <% @user_rooms.each do |userroom| %>
+            <% unless room.user_id == userroom.user_id %>
+              <p class='member' style="color:red;">・<%= userroom.user.name %></p>
+            <% end %>
+          <% end %>
+        </div>
+        <script>
+          $('#<%= "room_#{room.id}"%>').hover(function () {
+              $("[id^=room_member_]").css('display', 'none')
+            $('#<%= "room_member_#{room.id}"%>').css('display', 'block');
+            });
+        </script>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+<div class='box'>
+  <p class='text'>あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ</p>
+</div>
 
 <%= link_to 'ホーム', home_index_path %><br>
 <%= link_to '部屋追加', new_room_path%><br>
