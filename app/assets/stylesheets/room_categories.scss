@@ -54,7 +54,7 @@
     height: 200px;
     padding: 80px 0 10px 0;
     margin: 0;
-    font-size: 2vw;
+    font-size: 20px;
     border-radius: 10px;
 }
 .show2{
@@ -71,7 +71,7 @@
 }
 
 .show2 p{
- font-size: 2vw;
+ font-size: 30px;
  padding: 10px;
 }
 h1{
@@ -155,23 +155,16 @@ h1{
         padding: 10px;
         width: 100%;
     }
-    /*.btnx-indigo-light-show{
-        display: flex;
-        flex-flow: column;
-        margin: 0 auto;
-        padding: 10px;
-        width: 100%;
-    }*/
 }
-/*@media (max-width: 400px) {
-    .show{
-        font-size: 5px;
-    }
-}*/
-
 
 .text {
     font-size: 3vw;
     background-color: gray;
     padding: 20px;
 }
+
+/*@media (max-width: 1000px) {
+    .show1 .element4{
+        font-size: 2vw;
+    }
+}*/

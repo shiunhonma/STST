@@ -60,8 +60,13 @@ ActiveRecord::Schema.define(version: 2023_12_15_045409) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "point"
     t.binary "icon"
+<<<<<<< HEAD
     t.integer "teacher_member"
     t.integer "student_member"
+=======
+    t.integer "student_member"
+    t.integer "teacher_member"
+>>>>>>> 0aae33d09e1438112daf01e4d4358ca105a528a5
   end
 
 end

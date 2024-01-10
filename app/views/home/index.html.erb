@@ -8,23 +8,23 @@
   <div class="col-md-6 border">
     <div class="student_member">
       <p>自分の部屋</p>
-      <% @anotherUserRooms.each do |userroom| %>
-        <% if userroom.room.user_id == current_user.id %>
+      <% @rooms.each do |room| %>
+        <% if room.user_id == current_user.id %>
           <table>
             <tr>
               <td>
-                <%= image_tag(url_for(image_of_usericon_path(userroom.room.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
+                <%= image_tag(url_for(image_of_usericon_path(room.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
               </td>
               <td>
-                <%= userroom.room.user.name %>
+                <%= room.user.name %>
               </td>
               <td>
-                <%= link_to room_path(userroom.room.id) do %>
-                  <%= userroom.room.room_name %>
+                <%= link_to room_path(room.id) do %>
+                  <%= room.room_name %>
                 <% end %>
               </td>
               <td>
-                <% chat = Chat.find_by(id: userroom.room.chat_ids.last) %>
+                <% chat = Chat.find_by(id: room.chat_ids.last) %>
                 <% if chat.nil? %>
                   <span>投稿なし</span>
                 <% else %>
@@ -40,23 +40,23 @@
       <br>
 
       <p>他の人の部屋</p>
-      <% @anotherUserRooms.each do |userroom| %>
-        <% if userroom.room.user_id != current_user.id %>
+      <% @rooms.each do |room| %>
+        <% if room.user_id != current_user.id %>
           <table>
             <tr>
               <td>
-                <%= image_tag(url_for(image_of_usericon_path(userroom.room.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
+                <%= image_tag(url_for(image_of_usericon_path(room.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
               </td>
               <td>
-                <%= userroom.room.user.name %>
+                <%= room.user.name %>
               </td>
               <td>
-                <%= link_to room_path(userroom.room.id) do %>
-                  <%= userroom.room.room_name %>
+                <%= link_to room_path(room.id) do %>
+                  <%= room.room_name %>
                 <% end %>
               </td>
               <td>
-                <% chat = Chat.find_by(id: userroom.room.chat_ids.last) %>
+                <% chat = Chat.find_by(id: room.chat_ids.last) %>
                 <% if chat.nil? %>
                   <span>投稿なし</span>
                 <% else %>
@@ -86,8 +86,8 @@
     </div>
 
     <div class="row ">
-      <div class="col-md-12 border aaaaa">
-        <%= link_to 'マイページ', home_mypage_path , {class: "btn btn_mypage rounded-pill align-items-center d-flex"}%>
+      <div class="col-md-12 border text-center ">
+        <%= link_to 'マイページ', home_mypage_path , {class: "btn btn_mypage rounded-pill  "}%>
       </div>
     </div>
   </div>
