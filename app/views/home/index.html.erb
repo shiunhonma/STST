@@ -2,6 +2,9 @@
 
 <div class = Mypage><!-- とりあえず-->
   <h1 class ="Mypage_text">ホーム</h1>
+  <div class="  text-center ">
+        <%= link_to 'マイページ', home_mypage_path , {class: "btn btn_mypage rounded-pill  "}%>
+  </div>
 </div>
 
 <div class="row ">
@@ -71,24 +74,20 @@
     </div>
   </div>
   
-  <div class="col-md-6 border">
+  <div class="col-md-6 border ">
 
-    <div class="row ">
-      <div class="col-md-12 border text-center">
-        <%= link_to '教える', room_categories_path %><!-- {class: "btn btn_teacher "}-->
+    <div class="row home_size">
+      <div class="col-md-12  text-center ">
+        <%= link_to '教える', room_categories_path ,{class: "btn btn_teacher "}%><!-- -->
       </div>
     </div>
 
-    <div class="row ">
-      <div class="col-md-12 border text-center">
-        <%= link_to '教えてもらう', new_room_path %><!-- {class: "btn btn_student"}-->
+    <div class="row home_size">
+      <div class="col-md-12  text-center ">
+        <%= link_to '教えてもらう', new_room_path ,{class: "btn btn_student"}%><!-- -->
       </div>
     </div>
 
-    <div class="row ">
-      <div class="col-md-12 border text-center ">
-        <%= link_to 'マイページ', home_mypage_path , {class: "btn btn_mypage rounded-pill  "}%>
-      </div>
-    </div>
+
   </div>
 </div>

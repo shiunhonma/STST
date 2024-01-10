@@ -1,39 +1,48 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.aaaaa{
+    max-height: 400px;
+    height: 400px;
+}
 .btn_mypage{
     justify-content: center;
     width: 200px;
-    height: 200px;
+    height: 50px;
     background: #6fa1ff;
     color: #FFF;
-    margin: 10px 0;
-    padding-top: 70px;
+    margin: 0px 0px;
+    padding-top: 6px;
 }
 .btn_mypage:hover{
     background: #87b1ff;
 }
+.home_size{
+    height: 200px;
+
+}
 .btn_teacher{
     justify-content: center;
-    width: 300px;
-    height: 70px;
-    background: #29e939;
+    width: 350px;
+    height: 150px;
+    background: #219ed8;
     color: #FFF;
-    margin: 10px 0;
-    padding-top: 20px;
+    margin: 20px 0;
+    padding-top: 55px;
+    
 }
 .btn_teacher:hover{
-    background: #49eb56;
+    background: #24b0f1;
 }
 
 .btn_student{
     justify-content: center;
-    width: 300px;
-    height: 70px;
+    width: 350px;
+    height: 150px;
     background: #ffeb33;
     color: #FFF;
-    margin: 10px 0;
-    padding-top: 20px;
+    margin: 20px 0;
+    padding-top: 55px;
 }
 
 .btn_student:hover{
@@ -41,6 +50,6 @@
 }
 
 .student_member{
-    height: 260px;
+    height: 400px;
     overflow-y: scroll;
 }
