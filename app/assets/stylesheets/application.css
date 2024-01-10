@@ -173,6 +173,7 @@ a.btn_logout {
   padding: 10px 15px;
   font-size: 1.6rem;
   background-color: #313131;
+  margin-left: 10px;
 }
 
 .btn_logout:hover,
@@ -181,6 +182,7 @@ a.btn_logout:hover {
   padding: 10px 15px;
   font-size: 1.6rem;
   background: #494949;
+  margin-left: 10px;
 }
 
 .btns{
@@ -200,6 +202,7 @@ a.btn--form {
   padding: 10px 15px;
   font-size: 1.0rem;
   background-color: #313131;
+  
 }
 
 .btn--form:hover,
