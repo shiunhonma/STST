@@ -1,9 +1,13 @@
-<%= link_to image_tag('/images/mailbox.png' , class:"home" ,:width => '100', :height => '60' ), room_entries_path  %>
+
 
 <div class = Mypage><!-- とりあえず-->
   <h1 class ="Mypage_text">ホーム</h1>
+  
   <div class=" text-center mypage_center">
-        <%= link_to 'マイページ', home_mypage_path , {class: "btn btn_mypage rounded-pill  "}%>
+    <%= link_to 'マイページ', home_mypage_path , {class: "btn btn_mypage rounded-pill  "}%>
+    <%= link_to image_tag('/images/mailbox.png' , class:"home" ,:width => '100', :height => '60' ), room_entries_path ,{class:"home_back"} %>
+    
+    
   </div>
 </div>
 

@@ -91,7 +91,11 @@ a{
   
 }
 .home:hover{
-  filter: contrast(200%);
+  filter: contrast(150%);
+  
+}
+.home_back:hover{
+  background-color:  transparent;
 }
 .root_home{
   text-align: right;
