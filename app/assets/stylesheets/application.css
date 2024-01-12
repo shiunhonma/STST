@@ -29,15 +29,21 @@ a{
   margin: auto 0px;
 }
 .gear{
-  margin:0px 0px 0px 0px;
+  margin: auto 0px;
 }
 .gear:hover{
-  filter: contrast(200%);
+  filter: contrast(800%);
   text-decoration: none;
-  background-color:  #ee827c;
+  background-color:  transparent;
+  opacity: 0.8;
 }
+.gear_center{
+  margin: auto 10px;
+}
+
+
 .gear_back:hover{
-  background-color: #ee827c ;
+  background-color: transparent;
 }
 .chat_side{
   max-height: 500px;
@@ -217,6 +223,5 @@ a.btn--form:hover {
 .form_file{
   display: none;
 }
-a.
 
 

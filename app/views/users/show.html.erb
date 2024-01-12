@@ -2,7 +2,9 @@
 
 <div class = setting_head><!-- とりあえず-->
     <h1 class ="Mypage_text">設定</h1>
-    <%= link_to image_tag('/images/戻る.jpg' , class:"gear" ,:width => '70', :height => '70' ), home_mypage_path  %>
+    <div class="gear_center">
+        <%= link_to image_tag('/images/戻る.jpg' , class:"gear" ,:width => '70', :height => '70' ), home_mypage_path ,{class:"gear_back"} %>
+    </div>
 </div>
 
 
