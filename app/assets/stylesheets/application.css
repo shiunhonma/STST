@@ -36,7 +36,9 @@ a{
   text-decoration: none;
   background-color:  #ee827c;
 }
-
+.gear_back:hover{
+  background-color: #ee827c ;
+}
 .chat_side{
   max-height: 500px;
   height: 100%;
@@ -215,5 +217,6 @@ a.btn--form:hover {
 .form_file{
   display: none;
 }
+a.
 
 
