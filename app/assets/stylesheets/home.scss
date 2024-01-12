@@ -5,14 +5,18 @@
     max-height: 400px;
     height: 400px;
 }
+
+.mypage_center{
+    margin: auto 0px;
+}
 .btn_mypage{
     justify-content: center;
     width: 200px;
-    height: 50px;
+    height: 60px;
     background: #6fa1ff;
     color: #FFF;
-    margin: 20px 0px;
-    padding-top: 6px;
+    margin: auto 0px;
+    padding-top: 10px;
 }
 .btn_mypage:hover{
     background: #87b1ff;
