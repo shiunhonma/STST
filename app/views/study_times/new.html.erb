@@ -1,0 +1,89 @@
+<h1>勉強時間計測</h1>
+<h1><%= Time.zone.today.strftime('%y年%-m月%-d日') %></h1>
+<h1><div id="count">00:00:00</div></h1>
+
+<div class="row">
+  <div class="col-mid-12 text-center">
+    <%= link_to "開始","#",{ id:"start",class: " btn btn_teacher " } %>
+    <%= link_to "停止","#",{ id:"stop",class: " btn btn_teacher " } %>
+    <%= link_to "リセット","#",{ id:"reset",class: " btn btn_teacher " } %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-mid-12 text-center">
+    <%= form_tag(@study_time, name:"submitForm") do %>
+      <input type="hidden" id="date" name="date" value="<%= Time.zone.today %>"/>
+      <input type="hidden" id="time" name="time" value="0"/>
+      <%= link_to "登録","#",{ id:"submit",class: " btn btn_teacher " , onclick: "ClickEvent();" } %>
+  <%end%>
+    <%= link_to 'マイページに戻る',home_index_path%>
+  </div>
+</div>
+<script>
+const count = document.getElementById('count');
+const startButton = document.getElementById('start');
+const stopButton = document.getElementById('stop');
+const retetButton = document.getElementById('reset');
+const time = document.getElementById('time');
+const submitButton = document.getElementById('submit');
+
+startButton.style.display = "";
+stopButton.style.display = "none";
+retetButton.style.display = "none";
+submitButton.style.display = "none";
+// 開始時間
+let startTime;
+//停止時間
+let stopTime = 0;
+//タイムアウトID
+let timeoutID;
+
+let secondTime;
+
+//時間を表示する関数
+function displayTime() {
+    const currentTime = new Date(Date.now() + ((new Date().getTimezoneOffset() + (540)) * 60 * 1000) - startTime + stopTime);
+    const h = String(currentTime.getHours() - 9).padStart(2, '0');
+    const m = String(currentTime.getMinutes()).padStart(2,'0');
+    const s = String(currentTime.getSeconds()).padStart(2,'0');
+
+    count.textContent = `${h}:${m}:${s}`;
+    time.value = Math.floor(currentTime / 1000);
+    timeoutID = setTimeout(displayTime, 10);
+}
+
+//スタートボタンがクリックされたら時間を進める
+startButton.addEventListener('click', () => {
+    startButton.style.display = "none";
+    stopButton.style.display = "";
+    retetButton.style.display = "none";
+    submitButton.style.display = "none";
+    startTime = Date.now() + (( new Date().getTimezoneOffset() +  (540)) * 60 * 1000);
+    displayTime();
+});
+
+stopButton.addEventListener('click', function() {
+    startButton.style.display = "";
+    stopButton.style.display = "none";
+    retetButton.style.display = "";
+    submitButton.style.display = "";
+    clearTimeout(timeoutID);
+    stopTime += (Date.now() + ((new Date().getTimezoneOffset() + (540)) * 60 * 1000) - startTime);
+});
+ //リセットボタンがクリックされたら時間を０に戻す
+retetButton.addEventListener('click', function() {
+    startButton.style.display = "";
+    stopButton.style.display = "none";
+    retetButton.style.display = "none";
+    submitButton.style.display = "none";
+    count.textContent ='00:00:00';
+    time.value = "0";
+    stopTime = 0;
+});
+//計測時間を送信する関数
+ function ClickEvent(){
+    document.submitForm.submit();
+ }
+</script>
+

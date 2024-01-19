@@ -1,0 +1,32 @@
+<%= form_with(model: study_time) do |form| %>
+  <% if study_time.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(study_time.errors.count, "error") %> prohibited this study_time from being saved:</h2>
+
+      <ul>
+        <% study_time.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time %>
+    <%= form.number_field :time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

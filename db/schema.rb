@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_15_045409) do
+ActiveRecord::Schema.define(version: 2024_01_16_010904) do
 
   create_table "chats", force: :cascade do |t|
     t.text "message"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 2023_12_15_045409) do
     t.text "comment"
   end
 
+  create_table "study_times", force: :cascade do |t|
+    t.integer "user_id"
+    t.date "date"
+    t.integer "time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "user_rooms", force: :cascade do |t|
     t.integer "user_id"
     t.integer "room_id"
@@ -60,13 +68,8 @@ ActiveRecord::Schema.define(version: 2023_12_15_045409) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "point"
     t.binary "icon"
-<<<<<<< HEAD
-    t.integer "teacher_member"
-    t.integer "student_member"
-=======
     t.integer "student_member"
     t.integer "teacher_member"
->>>>>>> 0aae33d09e1438112daf01e4d4358ca105a528a5
   end
 
 end
