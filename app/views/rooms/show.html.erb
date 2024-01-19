@@ -1,39 +1,61 @@
 <% unless @userroom == nil %>
+<<<<<<< HEAD
+  <p class='title' style="font-size:30px;" ><%= @userroom.room.room_name %></p>
+   <br>
+   <p>メンバー</p>
+=======
+  <%= @room.id %>
+>>>>>>> e67d8ed9cbbc8fd8a1b3cb0b91d751fd8da04389
   <% @userrooms.each do |e| %>
     <% current_user == e.user ? @class = "current_user" : @class = "" %>
-    <% if e.user != current_user %>
-      <h5 class="text-left <%= @class %>" id="<%= @class %>" style="font-size: 30px;" data-user_id="<%= e.user.id %>">
-        <%= "@#{e.user.name}" %>
-      </h5>
-    <% else %>
+    <!--% if e.user != current_user %-->
+      <!--h5 class="text-left <%= @class %>" id="<%= @class %>" style="font-size: 30px;" data-user_id="<%= e.user.id %>"-->
+        <%= image_tag(url_for(image_of_usericon_path(e.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
+        <%= "#{e.user.name}"%>
+      <!--/h5-->
+
+    <!--% else %-->
       <h5 class="text-left <%= @class %>" id="<%= @class %>" data-user_id="<%= e.user.id %>"></h5>
-    <% end %>
+    <!--% end %-->
   <% end %>
 
   <div id="chats" data-room_id="<%= @room.id %>">
     <%= render @chats %>
   </div>
 
+<<<<<<< HEAD
+  <form class="textbox">
+    <label class="space" style="color: black;" id="target">新しいメッセージを作成</label>
+=======
+  <%= @userroom.user.point %>
+
   <form>
     <label style="color: black;" id="target">新しいメッセージを作成</label>
+>>>>>>> e67d8ed9cbbc8fd8a1b3cb0b91d751fd8da04389
     <input type="text" id="chat_input" data-behavior="room_speaker" class="form-control">
+    <% if current_user.id == @userroom.user_id %>
+      <%= link_to '編集', edit_room_path(@room) %> |
+    <% end %>
+    <%= link_to '戻る', rooms_path %> |
+    <%= link_to 'ホーム', home_index_path %>
+
   </form>
 
   <br>
 
-  <% if current_user.id == @userroom.user_id %>
-    <%= link_to '編集', edit_room_path(@room) %> |
-  <% end %>
-  <%= link_to '戻る', rooms_path %> |
-  <%= link_to 'ホーム', home_index_path %>
+  <div id="test">
+  </div>
+  
+  <br>
+
 
   <script>
-    var element = document.getElementById('chat_input'); //移動させたい一の要素を取得
+    var element = document.getElementById('test'); //移動させたい一の要素を取得
     element.scrollIntoView();
   </script>
 
 <% else %>
-
+  <%= @room.room_name %>
   <h5 class="text-left" style="font-size: 30px;" data-user_id="メンバーがいません">
   <%= link_to 'ホーム', home_index_path %>
   <br><br>
@@ -51,6 +73,7 @@
   <%= link_to '戻る', rooms_path %>
 
 <% end %>
+
 
 
 <!--p id="notice"><%= notice %></p>

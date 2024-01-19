@@ -19,4 +19,13 @@ class User < ApplicationRecord
     has_many :chats
     has_many :room_entries
     has_many :rooms
+
+
+    def first_point_add
+        self.point += 8
+    end
+
+    def point_add
+        self.point += 2
+    end
 end

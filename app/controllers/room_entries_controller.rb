@@ -21,6 +21,7 @@ class RoomEntriesController < ApplicationController
   # GET /room_entries/1/edit
   def edit
     @user = current_user
+    @main_user = RoomEntry.find_by(:user_id => current_user.id)
     # @room = Room.where(Room.user_id => current_user.id).present?
     # @room = Room.find(params[:user_id])
   end
@@ -61,6 +62,14 @@ class RoomEntriesController < ApplicationController
           @userroom2 = UserRoom.new(:room_id => @room.id, :user_id => @room_entry.user_id)
           @userroom2.save
         end
+
+        @user = User.find(current_user.id)
+        @user.point_add
+        @user.save
+
+        @user = User.find(@room_entry.user_id)
+        @user.point_add
+        @user.save
 
         #チャット画面に遷移する
         redirect_to room_path(@room.id)

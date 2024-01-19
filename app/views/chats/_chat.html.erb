@@ -1,4 +1,5 @@
 <p class="<%= chat.id %>" style= "margino-top: 0;">
+<%= image_tag(url_for(image_of_usericon_path(chat.user.id)), class: "rounded-circle",:width => '20', :height => '20' )%>
   <%= chat.user.name %>
 </p>
 <p class="<%= chat.id %>">
@@ -26,6 +27,6 @@
             $('p.' + <%= chat.id %>).css('text-align', 'left');
             $('p.' + <%= chat.id %> + ' .balloon').addClass('balloon-left');
         }
-        var element = document.getElementById('chat_input');//移動させたい位置の要素を取得
+        var element = document.getElementById('test');//移動させたい位置の要素を取得
     element.scrollIntoView();
 </script>
