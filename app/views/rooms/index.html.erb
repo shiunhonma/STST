@@ -1,5 +1,14 @@
 <div>
+  <% taihi2 = 0 %>
   <% @anotherUserRooms.each do |userroom| %>
+    <% taihi1 = userroom.room.id %>
+    <% 
+      if taihi1 == taihi2
+        next
+      end 
+    %> 
+
+
     <table class="table table-striped">
       <tr>
         <td>
@@ -7,11 +16,8 @@
         </td>
         <td>
           <%= link_to room_path(userroom.room.id) do %>
-            <%= userroom.user.name %>
+            <%= userroom.room.room_name %>
           <% end %>
-        </td>
-        <td>
-          <%= userroom.room.room_name %>
         </td>
         <td>
           <% chat = Chat.find_by(id: userroom.room.chat_ids.last) %>
@@ -31,6 +37,7 @@
         </td>
       </tr>
     </table>
+    <% taihi2 = userroom.room.id %>
   <% end %>
 
   <br>

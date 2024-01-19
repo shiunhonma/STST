@@ -65,6 +65,6 @@ class UserRoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_room_params
-      params.require(:user_room).permit(:user_id, :room_id)
+      params.require(:user_room).permit(:user_id, :room_id, :point_check)
     end
 end

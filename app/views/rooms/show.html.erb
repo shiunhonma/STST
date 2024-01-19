@@ -1,4 +1,5 @@
 <% unless @userroom == nil %>
+  <%= @room.id %>
   <% @userrooms.each do |e| %>
     <% current_user == e.user ? @class = "current_user" : @class = "" %>
     <% if e.user != current_user %>
@@ -13,6 +14,8 @@
   <div id="chats" data-room_id="<%= @room.id %>">
     <%= render @chats %>
   </div>
+
+  <%= @userroom.user.point %>
 
   <form>
     <label style="color: black;" id="target">新しいメッセージを作成</label>
