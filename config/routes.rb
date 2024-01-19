@@ -1,5 +1,6 @@
 
 Rails.application.routes.draw do
+  resources :study_times
   resources :room_entries
   get 'home/mypage'
   get 'home/rank'
@@ -30,5 +31,5 @@ Rails.application.routes.draw do
   
   get '/image_of_usericon/:id' , to: 'users#get_image', as:'image_of_usericon'
 
-
+  get 'home/graph'
 end

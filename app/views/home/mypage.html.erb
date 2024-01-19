@@ -13,8 +13,8 @@
                 <div class="row">
                     <div class="col-md-12 border text-center">
                         <div class="icon_box">
-                            <%= image_tag(url_for(image_of_usericon_path(current_user.id)), class: "rounded-circle",:width => '350', :height => '350' )%>
-                            <h1 class="name"><%= current_user.name %>(<%= current_user.id %>)</h1>
+                            <%= image_tag(url_for(image_of_usericon_path(current_user.id)), class: "rounded-circle border",:width => '350', :height => '350' )%>
+                            <h1 class="name"><%= current_user.name %></h1><!--(<%= current_user.id %>)-->
                         </div>
                     </div>
                 </div>

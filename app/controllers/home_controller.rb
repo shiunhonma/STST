@@ -20,4 +20,31 @@ class HomeController < ApplicationController
   end
   def mypage
   end
+  def graph
+    time_total = 0
+    
+    # 日付データの配列を生成
+    base_days = [*Date.current - 1.week .. Date.current]
+
+    data_time = []
+    # 一日毎の勉強時間を取得して配列に格納する
+    base_days.each do |base_day|
+      rec = StudyTime.where(user_id: current_user.id).where(date:base_day).group("date").sum(:time)
+      time = 0
+      rec.each do |key, value|
+        time = value / 3600.0 # 秒を時にする
+        time_total = time_total + time
+      end
+    data_time << [base_day.strftime('%Y年%-m月%-d日').to_s, time]
+  end
+  
+  data_average = []
+  # 平均の勉強時間を配列に格納する
+  base_days.each do |base_day|
+    data_average << [base_day.strftime('%Y年%-m月%-d日').to_s, time_total / base_days.length]
+  end
+  
+
+  @chart_data = [{name:"勉強時間", data: data_time},{name:"平均時間", data: data_average}]
+end
 end

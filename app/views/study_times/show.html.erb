@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @study_time.user_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @study_time.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @study_time.time %>
+</p>
+
+<%= link_to 'Edit', edit_study_time_path(@study_time) %> |
+<%= link_to 'Back', study_times_path %>
