@@ -26,6 +26,7 @@
   <% if current_user.id == room_entry.room.user_id %>
     <div class="actions">
       <%= form.submit "承認" %>
+      <%= current_user.point %>
     </div>
   <% else %>
     <div class="actions">

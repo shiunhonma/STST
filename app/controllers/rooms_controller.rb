@@ -20,10 +20,16 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @userrooms = UserRoom.where(:room_id => @room.id)
     @userroom = @userrooms.find_by(:user_id => current_user.id)
+<<<<<<< HEAD
     
     if @userrooms.present?
       @chats = @room.chats
     end
+=======
+      if @userrooms.present?
+        @chats = @room.chats
+      end
+>>>>>>> e67d8ed9cbbc8fd8a1b3cb0b91d751fd8da04389
   end
 
   # GET /rooms/new

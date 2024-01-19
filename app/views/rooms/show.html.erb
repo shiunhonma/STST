@@ -1,7 +1,11 @@
 <% unless @userroom == nil %>
+<<<<<<< HEAD
   <p class='title' style="font-size:30px;" ><%= @userroom.room.room_name %></p>
    <br>
    <p>メンバー</p>
+=======
+  <%= @room.id %>
+>>>>>>> e67d8ed9cbbc8fd8a1b3cb0b91d751fd8da04389
   <% @userrooms.each do |e| %>
     <% current_user == e.user ? @class = "current_user" : @class = "" %>
     <!--% if e.user != current_user %-->
@@ -19,8 +23,15 @@
     <%= render @chats %>
   </div>
 
+<<<<<<< HEAD
   <form class="textbox">
     <label class="space" style="color: black;" id="target">新しいメッセージを作成</label>
+=======
+  <%= @userroom.user.point %>
+
+  <form>
+    <label style="color: black;" id="target">新しいメッセージを作成</label>
+>>>>>>> e67d8ed9cbbc8fd8a1b3cb0b91d751fd8da04389
     <input type="text" id="chat_input" data-behavior="room_speaker" class="form-control">
     <% if current_user.id == @userroom.user_id %>
       <%= link_to '編集', edit_room_path(@room) %> |
