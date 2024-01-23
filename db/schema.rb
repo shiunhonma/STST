@@ -10,9 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2024_01_16_010904) do
-=======
 ActiveRecord::Schema.define(version: 2024_01_17_031259) do
 
   create_table "Users", force: :cascade do |t|
@@ -26,7 +23,6 @@ ActiveRecord::Schema.define(version: 2024_01_17_031259) do
     t.integer "teacher_member"
     t.integer "student_member"
   end
->>>>>>> ecd192e13893c47d9b8dff3e45d549b98db5e1bd
 
   create_table "chats", force: :cascade do |t|
     t.text "message"
@@ -74,22 +70,7 @@ ActiveRecord::Schema.define(version: 2024_01_17_031259) do
     t.integer "room_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-<<<<<<< HEAD
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "point"
-    t.binary "icon"
-    t.integer "student_member"
-    t.integer "teacher_member"
-=======
     t.boolean "point_check"
->>>>>>> ecd192e13893c47d9b8dff3e45d549b98db5e1bd
   end
 
 end

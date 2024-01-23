@@ -37,6 +37,10 @@ class HomeController < ApplicationController
       end
     data_time << [base_day.strftime('%Y年%-m月%-d日').to_s, time]
   end
+
+  def rank
+    @user = User.find(current_user.id)
+  end
   
   data_average = []
   # 平均の勉強時間を配列に格納する

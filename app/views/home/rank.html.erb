@@ -1,5 +1,10 @@
 <h2>ランキング</h2>
+<p>所有ポイント:<%= current_user.point %></p>
 
+<% users = User.all %>
+<% users.each do |user| %>
+  
+<% end %>
 
 <%= link_to "戻る", home_mypage_path %>
 <%= link_to "ホーム", root_path %>
