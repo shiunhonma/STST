@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(version: 2024_01_17_031259) do
     t.text "comment"
   end
 
+  create_table "study_times", force: :cascade do |t|
+    t.integer "user_id"
+    t.date "date"
+    t.integer "time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "user_rooms", force: :cascade do |t|
     t.integer "user_id"
     t.integer "room_id"
