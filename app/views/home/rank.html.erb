@@ -1,0 +1,45 @@
+<h2>ランキング</h2>
+<p>所有ポイント:<%= current_user.point %></p>
+<br>
+<% rank_num = 1 %>
+<% rank_id = "" %>
+<% users = User.all.order(point: "DESC") %>
+<% users.each do |user|%>
+  <%
+    if rank_num == 1
+      rank_id = "no1"
+    elsif rank_num == 2
+      rank_id = "no2"
+    elsif rank_num == 3
+      rank_id = "no3"
+    end
+    puts "#{rank_id}*********************************************************"
+  %>
+  <div id="<%=rank_id%>">
+    <%= rank_num %>
+    <%= user.name %>:
+    <%= user.point %>
+    <% rank_num += 1 %>
+  </div>
+  <br>
+  <% rank_id = "" %>
+<%end %>
+
+<%= link_to "戻る", home_mypage_path %>
+<%= link_to "ホーム", root_path %>
+
+
+<style>
+  #no1 {
+    color: gold;
+    font-size: 4.5vw;
+  }
+  #no2 {
+    color: silver;
+    font-size: 3vw;
+  }
+  #no3 {
+    color: #ac6b25;
+    font-size: 2.5vw;
+  }
+</style>

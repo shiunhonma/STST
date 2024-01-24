@@ -12,6 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2024_01_17_031259) do
 
+  create_table "Users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "point"
+    t.binary "icon"
+    t.integer "teacher_member"
+    t.integer "student_member"
+  end
+
   create_table "chats", force: :cascade do |t|
     t.text "message"
     t.binary "attachment"
@@ -61,6 +73,7 @@ ActiveRecord::Schema.define(version: 2024_01_17_031259) do
     t.boolean "point_check"
   end
 
+<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -73,4 +86,6 @@ ActiveRecord::Schema.define(version: 2024_01_17_031259) do
     t.integer "student_member"
   end
 
+=======
+>>>>>>> 758e3dea3d9c87e1214434093d1ec73aeb355ca9
 end
