@@ -25,11 +25,10 @@
     <label class="space" style="color: black;" id="target">新しいメッセージを作成</label>
 
     <input type="text" id="chat_input" data-behavior="room_speaker" class="form-control">
-    <% if current_user.id == @userroom.user_id %>
-      <%= link_to '編集', edit_room_path(@room) %> |
-    <% end %>
-    <%= link_to '戻る', rooms_path %> |
-    <%= link_to 'ホーム', home_index_path %>
+
+    <%= link_to '戻る', rooms_path ,{class: "btn btn_look "}%> 
+    <%= link_to 'ホーム', home_index_path ,{class: "btn btn_look1 "}%> 
+    <%= link_to 'タイマー',study_times_new_path ,{class: "btn btn_look2 ", target:"_blank"}%>
 
   </form>
 
