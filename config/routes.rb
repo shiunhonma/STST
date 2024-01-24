@@ -32,4 +32,6 @@ Rails.application.routes.draw do
   get '/image_of_usericon/:id' , to: 'users#get_image', as:'image_of_usericon'
 
   get 'home/graph'
+
+  get 'study_times/new'
 end
