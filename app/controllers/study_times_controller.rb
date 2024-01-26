@@ -27,7 +27,7 @@ class StudyTimesController < ApplicationController
     @study_time.time = params[:time]
       if @study_time.save
       
-      redirect_to home_graph_path
+      redirect_to home_graph_path(graph:2)
     else
       render :new
     end
