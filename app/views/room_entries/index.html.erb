@@ -18,7 +18,7 @@
           <td><%= room_entry.comment %></td>
           <td><%= room_entry.flag %></td>
           <td><%= link_to '詳しく見る', edit_room_entry_path(room_entry) ,{class: "btn btn_look "}%></td>
-          <td><%= link_to '拒否', room_entry, method: :delete, data: {confirm: '本当に拒否しますか?'},class: "btn btn_look1"%></td>
+          <td><%= link_to '拒否', room_entry, method: :delete, data: {confirm: '本当に拒否しますか?'},class: "btn btn_look2"%></td>
         </tr>
       <% end %>
     <% end %>
@@ -28,4 +28,5 @@
 
 <br>
 
-<%= link_to "ホーム", root_path %>
+
+<%= link_to 'ホーム', home_index_path ,{class: "btn btn_look1 "}%> 

@@ -13,4 +13,4 @@
 <% if current_user.id == @room_entry.room.user_id %>
   <%= link_to '編集', edit_room_entry_path(@room_entry) %> |
 <% end %>
-<%= link_to '戻る', room_categories_path %>
+<%= link_to '戻る', room_categories_path, {class:"btn btn_look"}%>

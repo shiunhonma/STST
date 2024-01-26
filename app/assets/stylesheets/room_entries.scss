@@ -34,14 +34,13 @@
 // .actions input:hover{
 //     background-color: #0d6efd;
 // }
-.actions input{
-    font-size: 1.5vw;
-    border :solid 3px #0d6efd;
+.btn-input{
+    font-size: 15px;
+    border :solid 3px red;
     border-radius: 20%;
-    font-size: 30px;
     width: 100px;
     height: 50px;
 }
-.actions input:hover{
-    background-color: #87ace4;
+.btn-input:hover{
+    background-color: rgb(250, 111, 111);
 }

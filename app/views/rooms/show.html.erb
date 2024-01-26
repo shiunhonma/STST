@@ -47,7 +47,7 @@
 <% else %>
   <%= @room.room_name %>
   <h5 class="text-left" style="font-size: 30px;" data-user_id="メンバーがいません">
-  <%= link_to 'ホーム', home_index_path %>
+
   <br><br>
   <p>メンバーがいないためチャットできません</p>
   <table>
@@ -60,8 +60,8 @@
     </tbody>
   </table>
 
-  <%= link_to '戻る', rooms_path %>
-
+  <%= link_to '戻る', rooms_path ,{class: "btn btn_look "}%>
+  <%= link_to 'ホーム', home_index_path ,{class: "btn btn_look1 "}%>
 <% end %>
 
 
