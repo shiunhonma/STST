@@ -8,7 +8,7 @@
       <% unless room.user.id == current_user.id %>
         <%= link_to(new_room_entry_path(:room_id => room.id), class: "list-design") do %>
             <div class='btn btn-light show' id=<%= "room_#{room.id}"%>>
-              <p class='element1'><%= image_tag(url_for(image_of_usericon_path(current_user.id)),:width => '50', :height => '50' )%></td>
+              <p class='element1'><%= image_tag(url_for(image_of_usericon_path(room.user.id)),:width => '50', :height => '50' )%></td>
               <p class='element2'><%= room.user.name %></p>
               <p class='element3'><%= room.room_name %></p>
             </div>
