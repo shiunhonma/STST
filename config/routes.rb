@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :study_times
   resources :room_entries
   get 'home/mypage'
+  get 'home/rank'
   get 'home/index'
   root to: 'home#index'
   resources :chats

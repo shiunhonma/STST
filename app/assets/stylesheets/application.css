@@ -145,16 +145,14 @@ a.btn--ranking:hover {
 }
 
 
-.btn_update_setting,
-a.btn_update_setting {
+.btn_update_setting{
   color: #fff;
   padding: 10px 15px;
   font-size: 1.6rem;
   background-color: #099ad3;
 }
 
-.btn_update_setting:hover,
-a.btn_update_setting:hover {
+.btn_update_setting:hover{
   color: #fff;
   padding: 10px 15px;
   font-size: 1.6rem;

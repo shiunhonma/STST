@@ -11,8 +11,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label "名前" %>
-    <%= @user.name %>
+    <%= form.label "部屋名" %>
+    <h2><%= @room.room_name %></h2>
+  </div>
+
+  <div class="field">
+    <%= form.label "名前"%>
+    <h2><%= @user.name %></h2>
   </div>
 
   <div class="field">
@@ -25,12 +30,11 @@
 
   <% if current_user.id == room_entry.room.user_id %>
     <div class="actions">
-      <%= form.submit "承認" %>
-      <%= current_user.point %>
+      <%= form.submit "承認" ,class:"btn btn-input"%>
     </div>
   <% else %>
     <div class="actions">
-      <%= form.submit "申請" %>
+      <%= form.submit "申請" ,class: "btn btn-input" %>
     </div>
   <% end %>
 
