@@ -16,6 +16,7 @@ class RoomEntriesController < ApplicationController
     @room_entry = RoomEntry.new
     @room_entry.room_id = params[:room_id]
     @room_entry.user_id = current_user.id
+    @room = Room.find(params[:room_id])
     @user = current_user
   end
 
