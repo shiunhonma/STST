@@ -133,7 +133,7 @@ a.btn--ranking:hover {
   padding: 1.8rem 3.8rem;
 }
 
-/* ここから設定（プロファイル）*/
+/* ここから設定（プロファイル）----------------------------------------------------------*/
 .setting_head{
   margin: 0px -12px;
   padding: 10px;
@@ -226,6 +226,25 @@ a.btn--form:hover {
 }
 .form_file{
   display: none;
+}
+
+/* ここから時間推移（グラフ）----------------------------------------------------------*/
+.btn-graph{
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.0rem;
+  background-color: #313131;
+  margin-top: 10px;
+}
+.btn-graph:hover{
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 1.0rem;
+  background: #494949;
+  margin-top: 10px;
+}
+.graph_btn_space{
+  margin-left:10% ;
 }
 
 

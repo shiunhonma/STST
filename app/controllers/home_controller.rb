@@ -36,6 +36,7 @@ class HomeController < ApplicationController
         time_total = time_total + time
       end
     data_time << [base_day.strftime('%Y年%-m月%-d日').to_s, time]
+    @graph_max = params[:graph]
   end
   
   data_average = []

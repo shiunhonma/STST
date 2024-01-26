@@ -6,13 +6,22 @@
 </div>
 
 <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
-<div class="row">
-  <div class="col-md-12">
-    <%= line_chart @chart_data , xtitle: "日付", ytitle: "時間", curve: false, min: 0, max: 12, legend: true %>
+
+
+
+  <div class="row">
+    <div class="col-md-12 border p-3">
+      <%= line_chart @chart_data , xtitle: "日付", ytitle: "時間", curve: false, min: 0, max: @graph_max,  legend: true %>
+      <div class="graph_btn_space">
+        <h3>グラフの最大値</h3>
+        <%= link_to "２時間" , home_graph_path(graph:2),{class:"btn btn-graph "}%>
+        <%= link_to "１０時間" , home_graph_path(graph:10),{class:"btn btn-graph"}%>
+      </div>
+    </div>
   </div>
-</div>
+
 <div class="row">
   <div class="col-md-12">
-    <%= bar_chart @chart_data,  xtitle: "時間",ytitle: "日付", curve: false, min: 0, max: 12, legend: true, class:" text-truncate" %>
+    <%= bar_chart @chart_data,  xtitle: "時間",ytitle: "日付", curve: false, min: 0, max: 2, legend: true, class:" text-truncate" %>
   </div>
 </div>
