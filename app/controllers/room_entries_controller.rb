@@ -4,6 +4,7 @@ class RoomEntriesController < ApplicationController
   # GET /room_entries or /room_entries.json
   def index
     @room_entries = RoomEntry.all
+    @room = Room.all
   end
 
   # GET /room_entries/1 or /room_entries/1.json
@@ -21,9 +22,9 @@ class RoomEntriesController < ApplicationController
   # GET /room_entries/1/edit
   def edit
     @user = current_user
-    @main_user = RoomEntry.find_by(:user_id => current_user.id)
-    # @room = Room.where(Room.user_id => current_user.id).present?
-    # @room = Room.find(params[:user_id])
+    room_entry = RoomEntry.find(params[:id])
+    @teacher = User.find(room_entry.user_id)
+    @room = Room.find(room_entry.room_id)
   end
 
   # POST /room_entries or /room_entries.json
@@ -65,10 +66,12 @@ class RoomEntriesController < ApplicationController
 
         @user = User.find(current_user.id)
         @user.point_add
+        @user.teacher_member_add
         @user.save
 
         @user = User.find(@room_entry.user_id)
         @user.point_add
+        @user.student_member_add
         @user.save
 
         #チャット画面に遷移する

@@ -28,4 +28,13 @@ class User < ApplicationRecord
     def point_add
         self.point += 2
     end
+
+
+    def student_member_add
+        self.student_member += 1
+    end
+
+    def teacher_member_add
+        self.teacher_member += 1
+    end
 end
