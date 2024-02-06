@@ -1,5 +1,8 @@
-<h2>ランキング</h2>
-<p>所有ポイント:<%= current_user.point %></p>
+<div class ="Mypage" style = "background-color: #ffa115;">
+  <h2>ランキング</h2>
+  <h2>自分の所有ポイント:<%= current_user.point %></h2>
+</div>
+<h1></h1>
 <br>
 <% rank_num = 1 %>
 <% rank_id = "" %>
@@ -17,9 +20,10 @@
   %>
   <div id="<%=rank_id%>">
     <%= rank_num %>
-    <%= user.name %>:
-    <%= user.point %>
+    <%= user.name %>: 
+    <%= user.point %> p
     <% rank_num += 1 %>
+    <h1></h1>
   </div>
   <br>
   <% rank_id = "" %>
@@ -31,14 +35,14 @@
 <style>
   #no1 {
     color: gold;
-    font-size: 4.5vw;
+    font-size: 3.5vw;
   }
   #no2 {
     color: silver;
-    font-size: 3vw;
+    font-size: 2vw;
   }
   #no3 {
     color: #ac6b25;
-    font-size: 2.5vw;
+    font-size: 1.5vw;
   }
 </style>
